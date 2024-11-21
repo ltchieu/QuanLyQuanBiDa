@@ -89,9 +89,9 @@ namespace QL_Bida
 
 
             //Load dữ liệu đơn giá 1h chơi dựa theo loại bàn và khung giờ
-            string chuoiTime = "2023-01-01 " + txt_StartTime.Text;
+            string chuoiTime =  txt_StartTime.Text;
             string query =
-                "select GIA from DONGIA WHERE MALOAIBAN = " + maLoaiBan + " AND '" + chuoiTime + "' >= KHUNGGIOBATDAU and '" + chuoiTime + "' <= KHUNGGIOKETTHUC";
+                "select GIA from DONGIA WHERE MALOAIBAN = " + maLoaiBan + " AND '" + chuoiTime + "' between KHUNGGIOBATDAU and KHUNGGIOKETTHUC";
             DataTable dt_DonGia = db.getDataTable(query);
             txt_Gia1GioChoi.Text = dt_DonGia.Rows[0]["GIA"].ToString();
 
@@ -259,43 +259,77 @@ namespace QL_Bida
             //Hiện tiền thanh toán cần trả
             string maHD = TaoMaHD();
             double tongtien = double.Parse(txt_TongTien.Text) + double.Parse(txt_TienDV.Text);
-            double thucTra = tongtien - tongtien * double.Parse(txt_GiamGia.Text); //sửa lại txt_GiamGia.Text
+            string tienGiamGia = txt_GiamGia.Text;
+
+            if (tienGiamGia.Length == 2)
+                tienGiamGia = tienGiamGia.Substring(0, 1);
+            else if (tienGiamGia.Length == 3)
+                tienGiamGia = tienGiamGia.Substring(0, 2);
+
+            double thucTra = tongtien - tongtien * (double.Parse(tienGiamGia) / 100);//Tính tiền thực trả
             lb_ThanhToan.Text = thucTra.ToString();
+
             string maKH = "";
+            string ngayTaoHD = lb_NgayVaoChoi.Text;
+
+            string queryHD = "";
             //Lưu vào csdl
             if (cmb_dsKH.Enabled == true)
+            {
                 maKH = cmb_dsKH.SelectedValue.ToString();
-            string ngayTaoHD = lb_NgayVaoChoi.Text;
-            double giamGia = double.Parse(txt_GiamGia.Text);
+                queryHD = "insert into HOADON values('" + maHD + "', '" + maKH + "', '" + ngayTaoHD + "', " + double.Parse(tienGiamGia) + ", GETDATE(), '" + frmMain.maNV + "')";
+            }
+            else
+            {
+                maKH = "NULL";
+                queryHD = "insert into HOADON values('" + maHD + "', " + maKH + ", '" + ngayTaoHD + "', " + double.Parse(tienGiamGia) + ", GETDATE(), '" + frmMain.maNV + "')";
+            }
 
             //Thêm 1 dòng vào bảng HOADON
-            string queryHD =
-                "insert into HOADON values('" + maHD + "', '" + maKH + "', '" + ngayTaoHD + "', " + giamGia + ", 'NULL', 'NULL')";
             int r = db.getNonquery(queryHD);
             if (r == 1)
             {//Thêm nhiều dòng vào bảng chi tiết hóa đơn              
                 string gioBD = txt_StartTime.Text;
                 string gioKT = txt_EndTime.Text;
+
+                string maBan = "";
+                if (maLoaiBan == 1)
+                    maBan = "C0" + lb_SoBan.Text.Split(' ')[1];
+                else
+                    maBan = "B0" + lb_SoBan.Text.Split(' ')[1];
                 string queryCTHD =
-                    "insert into ChiTietHoaDon values('" + maHD + "', '" + maLoaiBan + "', '" + gioBD + "', '" + gioKT + "')";
+                    "insert into ChiTietHoaDon values('" + maHD + "', '" + maBan + "', '" + gioBD + "', '" + gioKT + "')";
                 int k = db.getNonquery(queryCTHD);
                 if (k == 0)
                 {
                     MessageBox.Show("Thêm không thành công");
+                    return;
                 }
-                
-                DataTable dt = db.getDataTable("select IDCTHD from ChiTietHoaDon Order by desc");
-                string idCTHD = dt.Rows[0]["IDCTHD"].ToString();
+
+                //Thêm vào bảng chi tiết dịch vụ
+                DataTable dt = db.getDataTable("select IDCTHD from ChiTietHoaDon Order by IDCTHD desc");
+                int idCTHD = int.Parse(dt.Rows[0]["IDCTHD"].ToString());
 
                 foreach (DataRow dr in dt_DsDvOrdered.Rows)
                 {
-                    string maDV = dr["MaDV"].ToString();
+                    int maDV = int.Parse(dr["MaDV"].ToString());
                     int sl = int.Parse(dr["SoLuong"].ToString());
                     string queryCTDV =
-                        "insert into ChiTietDichVu values('" + idCTHD + "', '" + maDV + "', " + sl + ")";
+                        "insert into ChiTietDichVu values(" + idCTHD + ", " + maDV + ", " + sl + ")";
+                    int kq = db.getNonquery(queryCTDV);
+                    if (kq == 0)
+                    {
+                        MessageBox.Show("Không lưu được hóa đơn", "Lỗi");
+                        return;
+                    }
                 }
-            }
 
+                frmDSBanBida.dsTrangThaiBan.Remove(selectedBan);//Xóa các trạng thái đã lưu
+                DoiMauNenThanhXanh?.Invoke(this, new EventArgs());
+
+            }
+            else
+                MessageBox.Show("Không lưu được hóa đơn", "Lỗi");
 
         }
 
@@ -442,14 +476,6 @@ namespace QL_Bida
 
 
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmDSBanBida.dsTrangThaiBan.Remove(selectedBan);//Xóa các trạng thái đã lưu
-
-            DoiMauNenThanhXanh?.Invoke(this, new EventArgs());
-        }
-
 
     }
 }

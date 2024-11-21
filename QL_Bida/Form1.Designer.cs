@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSBanBida));
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this._15 = new System.Windows.Forms.PictureBox();
-            this._14 = new System.Windows.Forms.PictureBox();
-            this._13 = new System.Windows.Forms.PictureBox();
-            this._12 = new System.Windows.Forms.PictureBox();
-            this._11 = new System.Windows.Forms.PictureBox();
-            this._10 = new System.Windows.Forms.PictureBox();
-            this._09 = new System.Windows.Forms.PictureBox();
-            this._08 = new System.Windows.Forms.PictureBox();
-            this._07 = new System.Windows.Forms.PictureBox();
-            this._06 = new System.Windows.Forms.PictureBox();
+            this.B015 = new System.Windows.Forms.PictureBox();
+            this.B014 = new System.Windows.Forms.PictureBox();
+            this.B013 = new System.Windows.Forms.PictureBox();
+            this.B012 = new System.Windows.Forms.PictureBox();
+            this.B011 = new System.Windows.Forms.PictureBox();
+            this.B010 = new System.Windows.Forms.PictureBox();
+            this.B009 = new System.Windows.Forms.PictureBox();
+            this.B008 = new System.Windows.Forms.PictureBox();
+            this.B007 = new System.Windows.Forms.PictureBox();
+            this.B006 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -56,48 +56,48 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._05 = new System.Windows.Forms.PictureBox();
-            this._04 = new System.Windows.Forms.PictureBox();
-            this._03 = new System.Windows.Forms.PictureBox();
-            this._02 = new System.Windows.Forms.PictureBox();
-            this._01 = new System.Windows.Forms.PictureBox();
+            this.B005 = new System.Windows.Forms.PictureBox();
+            this.B004 = new System.Windows.Forms.PictureBox();
+            this.B003 = new System.Windows.Forms.PictureBox();
+            this.B002 = new System.Windows.Forms.PictureBox();
+            this.B001 = new System.Windows.Forms.PictureBox();
             this.pnl_dsBanLo = new System.Windows.Forms.Panel();
             this.pnl_dsBanCarom = new System.Windows.Forms.Panel();
+            this.C005 = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.C006 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.C003 = new System.Windows.Forms.PictureBox();
+            this.C004 = new System.Windows.Forms.PictureBox();
+            this.C002 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.C001 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this._19 = new System.Windows.Forms.PictureBox();
-            this._21 = new System.Windows.Forms.PictureBox();
-            this._18 = new System.Windows.Forms.PictureBox();
-            this._17 = new System.Windows.Forms.PictureBox();
-            this._16 = new System.Windows.Forms.PictureBox();
-            this._20 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this._15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._09)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._08)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._07)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._06)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._05)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._04)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._03)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._02)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B015)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B014)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B013)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B012)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B011)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B010)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B009)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B008)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B007)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B006)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B005)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B004)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B003)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B002)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B001)).BeginInit();
             this.pnl_dsBanLo.SuspendLayout();
             this.pnl_dsBanCarom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C005)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C006)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C003)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C004)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C002)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C001)).BeginInit();
             this.SuspendLayout();
             // 
             // label17
@@ -124,145 +124,145 @@
             this.label16.TabIndex = 104;
             this.label16.Text = "Danh sách bàn lỗ";
             // 
-            // _15
+            // B015
             // 
-            this._15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._15.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._15.Image = ((System.Drawing.Image)(resources.GetObject("_15.Image")));
-            this._15.Location = new System.Drawing.Point(557, 313);
-            this._15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._15.Name = "_15";
-            this._15.Size = new System.Drawing.Size(67, 95);
-            this._15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._15.TabIndex = 91;
-            this._15.TabStop = false;
-            this._15.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B015.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B015.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B015.Image = ((System.Drawing.Image)(resources.GetObject("B015.Image")));
+            this.B015.Location = new System.Drawing.Point(557, 313);
+            this.B015.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B015.Name = "B015";
+            this.B015.Size = new System.Drawing.Size(67, 95);
+            this.B015.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B015.TabIndex = 91;
+            this.B015.TabStop = false;
+            this.B015.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _14
+            // B014
             // 
-            this._14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._14.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._14.Image = ((System.Drawing.Image)(resources.GetObject("_14.Image")));
-            this._14.Location = new System.Drawing.Point(422, 313);
-            this._14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._14.Name = "_14";
-            this._14.Size = new System.Drawing.Size(67, 95);
-            this._14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._14.TabIndex = 90;
-            this._14.TabStop = false;
-            this._14.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B014.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B014.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B014.Image = ((System.Drawing.Image)(resources.GetObject("B014.Image")));
+            this.B014.Location = new System.Drawing.Point(422, 313);
+            this.B014.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B014.Name = "B014";
+            this.B014.Size = new System.Drawing.Size(67, 95);
+            this.B014.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B014.TabIndex = 90;
+            this.B014.TabStop = false;
+            this.B014.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _13
+            // B013
             // 
-            this._13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._13.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._13.Image = ((System.Drawing.Image)(resources.GetObject("_13.Image")));
-            this._13.Location = new System.Drawing.Point(290, 313);
-            this._13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._13.Name = "_13";
-            this._13.Size = new System.Drawing.Size(67, 95);
-            this._13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._13.TabIndex = 89;
-            this._13.TabStop = false;
-            this._13.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B013.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B013.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B013.Image = ((System.Drawing.Image)(resources.GetObject("B013.Image")));
+            this.B013.Location = new System.Drawing.Point(290, 313);
+            this.B013.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B013.Name = "B013";
+            this.B013.Size = new System.Drawing.Size(67, 95);
+            this.B013.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B013.TabIndex = 89;
+            this.B013.TabStop = false;
+            this.B013.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _12
+            // B012
             // 
-            this._12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._12.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._12.Image = ((System.Drawing.Image)(resources.GetObject("_12.Image")));
-            this._12.Location = new System.Drawing.Point(157, 313);
-            this._12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._12.Name = "_12";
-            this._12.Size = new System.Drawing.Size(67, 95);
-            this._12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._12.TabIndex = 88;
-            this._12.TabStop = false;
-            this._12.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B012.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B012.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B012.Image = ((System.Drawing.Image)(resources.GetObject("B012.Image")));
+            this.B012.Location = new System.Drawing.Point(157, 313);
+            this.B012.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B012.Name = "B012";
+            this.B012.Size = new System.Drawing.Size(67, 95);
+            this.B012.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B012.TabIndex = 88;
+            this.B012.TabStop = false;
+            this.B012.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _11
+            // B011
             // 
-            this._11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._11.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._11.Image = ((System.Drawing.Image)(resources.GetObject("_11.Image")));
-            this._11.Location = new System.Drawing.Point(24, 313);
-            this._11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._11.Name = "_11";
-            this._11.Size = new System.Drawing.Size(67, 95);
-            this._11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._11.TabIndex = 87;
-            this._11.TabStop = false;
-            this._11.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B011.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B011.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B011.Image = ((System.Drawing.Image)(resources.GetObject("B011.Image")));
+            this.B011.Location = new System.Drawing.Point(24, 313);
+            this.B011.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B011.Name = "B011";
+            this.B011.Size = new System.Drawing.Size(67, 95);
+            this.B011.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B011.TabIndex = 87;
+            this.B011.TabStop = false;
+            this.B011.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _10
+            // B010
             // 
-            this._10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._10.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._10.Image = ((System.Drawing.Image)(resources.GetObject("_10.Image")));
-            this._10.Location = new System.Drawing.Point(557, 161);
-            this._10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._10.Name = "_10";
-            this._10.Size = new System.Drawing.Size(67, 95);
-            this._10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._10.TabIndex = 86;
-            this._10.TabStop = false;
-            this._10.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B010.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B010.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B010.Image = ((System.Drawing.Image)(resources.GetObject("B010.Image")));
+            this.B010.Location = new System.Drawing.Point(557, 161);
+            this.B010.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B010.Name = "B010";
+            this.B010.Size = new System.Drawing.Size(67, 95);
+            this.B010.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B010.TabIndex = 86;
+            this.B010.TabStop = false;
+            this.B010.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _09
+            // B009
             // 
-            this._09.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._09.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._09.Image = ((System.Drawing.Image)(resources.GetObject("_09.Image")));
-            this._09.Location = new System.Drawing.Point(422, 161);
-            this._09.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._09.Name = "_09";
-            this._09.Size = new System.Drawing.Size(67, 95);
-            this._09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._09.TabIndex = 85;
-            this._09.TabStop = false;
-            this._09.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B009.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B009.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B009.Image = ((System.Drawing.Image)(resources.GetObject("B009.Image")));
+            this.B009.Location = new System.Drawing.Point(422, 161);
+            this.B009.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B009.Name = "B009";
+            this.B009.Size = new System.Drawing.Size(67, 95);
+            this.B009.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B009.TabIndex = 85;
+            this.B009.TabStop = false;
+            this.B009.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _08
+            // B008
             // 
-            this._08.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._08.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._08.Image = ((System.Drawing.Image)(resources.GetObject("_08.Image")));
-            this._08.Location = new System.Drawing.Point(290, 161);
-            this._08.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._08.Name = "_08";
-            this._08.Size = new System.Drawing.Size(67, 95);
-            this._08.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._08.TabIndex = 84;
-            this._08.TabStop = false;
-            this._08.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B008.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B008.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B008.Image = ((System.Drawing.Image)(resources.GetObject("B008.Image")));
+            this.B008.Location = new System.Drawing.Point(290, 161);
+            this.B008.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B008.Name = "B008";
+            this.B008.Size = new System.Drawing.Size(67, 95);
+            this.B008.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B008.TabIndex = 84;
+            this.B008.TabStop = false;
+            this.B008.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _07
+            // B007
             // 
-            this._07.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._07.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._07.Image = ((System.Drawing.Image)(resources.GetObject("_07.Image")));
-            this._07.Location = new System.Drawing.Point(157, 162);
-            this._07.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._07.Name = "_07";
-            this._07.Size = new System.Drawing.Size(67, 95);
-            this._07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._07.TabIndex = 83;
-            this._07.TabStop = false;
-            this._07.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B007.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B007.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B007.Image = ((System.Drawing.Image)(resources.GetObject("B007.Image")));
+            this.B007.Location = new System.Drawing.Point(157, 162);
+            this.B007.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B007.Name = "B007";
+            this.B007.Size = new System.Drawing.Size(67, 95);
+            this.B007.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B007.TabIndex = 83;
+            this.B007.TabStop = false;
+            this.B007.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _06
+            // B006
             // 
-            this._06.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._06.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._06.Image = ((System.Drawing.Image)(resources.GetObject("_06.Image")));
-            this._06.Location = new System.Drawing.Point(24, 161);
-            this._06.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._06.Name = "_06";
-            this._06.Size = new System.Drawing.Size(67, 95);
-            this._06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._06.TabIndex = 82;
-            this._06.TabStop = false;
-            this._06.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B006.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B006.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B006.Image = ((System.Drawing.Image)(resources.GetObject("B006.Image")));
+            this.B006.Location = new System.Drawing.Point(24, 161);
+            this.B006.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B006.Name = "B006";
+            this.B006.Size = new System.Drawing.Size(67, 95);
+            this.B006.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B006.TabIndex = 82;
+            this.B006.TabStop = false;
+            this.B006.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label11
             // 
@@ -414,75 +414,75 @@
             this.label1.TabIndex = 67;
             this.label1.Text = "Bàn 01";
             // 
-            // _05
+            // B005
             // 
-            this._05.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._05.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._05.Image = ((System.Drawing.Image)(resources.GetObject("_05.Image")));
-            this._05.Location = new System.Drawing.Point(557, 10);
-            this._05.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._05.Name = "_05";
-            this._05.Size = new System.Drawing.Size(67, 95);
-            this._05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._05.TabIndex = 66;
-            this._05.TabStop = false;
-            this._05.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B005.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B005.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B005.Image = ((System.Drawing.Image)(resources.GetObject("B005.Image")));
+            this.B005.Location = new System.Drawing.Point(557, 10);
+            this.B005.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B005.Name = "B005";
+            this.B005.Size = new System.Drawing.Size(67, 95);
+            this.B005.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B005.TabIndex = 66;
+            this.B005.TabStop = false;
+            this.B005.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _04
+            // B004
             // 
-            this._04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._04.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._04.Image = ((System.Drawing.Image)(resources.GetObject("_04.Image")));
-            this._04.Location = new System.Drawing.Point(422, 10);
-            this._04.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._04.Name = "_04";
-            this._04.Size = new System.Drawing.Size(67, 95);
-            this._04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._04.TabIndex = 65;
-            this._04.TabStop = false;
-            this._04.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B004.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B004.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B004.Image = ((System.Drawing.Image)(resources.GetObject("B004.Image")));
+            this.B004.Location = new System.Drawing.Point(422, 10);
+            this.B004.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B004.Name = "B004";
+            this.B004.Size = new System.Drawing.Size(67, 95);
+            this.B004.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B004.TabIndex = 65;
+            this.B004.TabStop = false;
+            this.B004.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _03
+            // B003
             // 
-            this._03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._03.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._03.Image = ((System.Drawing.Image)(resources.GetObject("_03.Image")));
-            this._03.Location = new System.Drawing.Point(290, 10);
-            this._03.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._03.Name = "_03";
-            this._03.Size = new System.Drawing.Size(67, 95);
-            this._03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._03.TabIndex = 64;
-            this._03.TabStop = false;
-            this._03.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B003.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B003.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B003.Image = ((System.Drawing.Image)(resources.GetObject("B003.Image")));
+            this.B003.Location = new System.Drawing.Point(290, 10);
+            this.B003.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B003.Name = "B003";
+            this.B003.Size = new System.Drawing.Size(67, 95);
+            this.B003.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B003.TabIndex = 64;
+            this.B003.TabStop = false;
+            this.B003.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _02
+            // B002
             // 
-            this._02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._02.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._02.Image = ((System.Drawing.Image)(resources.GetObject("_02.Image")));
-            this._02.Location = new System.Drawing.Point(157, 10);
-            this._02.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._02.Name = "_02";
-            this._02.Size = new System.Drawing.Size(67, 95);
-            this._02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._02.TabIndex = 63;
-            this._02.TabStop = false;
-            this._02.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B002.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B002.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B002.Image = ((System.Drawing.Image)(resources.GetObject("B002.Image")));
+            this.B002.Location = new System.Drawing.Point(157, 10);
+            this.B002.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B002.Name = "B002";
+            this.B002.Size = new System.Drawing.Size(67, 95);
+            this.B002.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B002.TabIndex = 63;
+            this.B002.TabStop = false;
+            this.B002.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // _01
+            // B001
             // 
-            this._01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._01.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._01.Image = ((System.Drawing.Image)(resources.GetObject("_01.Image")));
-            this._01.Location = new System.Drawing.Point(24, 10);
-            this._01.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._01.Name = "_01";
-            this._01.Size = new System.Drawing.Size(67, 95);
-            this._01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._01.TabIndex = 62;
-            this._01.TabStop = false;
-            this._01.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.B001.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B001.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.B001.Image = ((System.Drawing.Image)(resources.GetObject("B001.Image")));
+            this.B001.Location = new System.Drawing.Point(24, 10);
+            this.B001.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B001.Name = "B001";
+            this.B001.Size = new System.Drawing.Size(67, 95);
+            this.B001.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.B001.TabIndex = 62;
+            this.B001.TabStop = false;
+            this.B001.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pnl_dsBanLo
             // 
@@ -490,33 +490,33 @@
             this.pnl_dsBanLo.Controls.Add(this.label12);
             this.pnl_dsBanLo.Controls.Add(this.label15);
             this.pnl_dsBanLo.Controls.Add(this.label14);
-            this.pnl_dsBanLo.Controls.Add(this._15);
+            this.pnl_dsBanLo.Controls.Add(this.B015);
             this.pnl_dsBanLo.Controls.Add(this.label13);
-            this.pnl_dsBanLo.Controls.Add(this._14);
+            this.pnl_dsBanLo.Controls.Add(this.B014);
             this.pnl_dsBanLo.Controls.Add(this.label11);
-            this.pnl_dsBanLo.Controls.Add(this._13);
+            this.pnl_dsBanLo.Controls.Add(this.B013);
             this.pnl_dsBanLo.Controls.Add(this.label1);
-            this.pnl_dsBanLo.Controls.Add(this._12);
+            this.pnl_dsBanLo.Controls.Add(this.B012);
             this.pnl_dsBanLo.Controls.Add(this.label2);
-            this.pnl_dsBanLo.Controls.Add(this._11);
+            this.pnl_dsBanLo.Controls.Add(this.B011);
             this.pnl_dsBanLo.Controls.Add(this.label3);
-            this.pnl_dsBanLo.Controls.Add(this._10);
+            this.pnl_dsBanLo.Controls.Add(this.B010);
             this.pnl_dsBanLo.Controls.Add(this.label4);
-            this.pnl_dsBanLo.Controls.Add(this._09);
+            this.pnl_dsBanLo.Controls.Add(this.B009);
             this.pnl_dsBanLo.Controls.Add(this.label5);
-            this.pnl_dsBanLo.Controls.Add(this._08);
+            this.pnl_dsBanLo.Controls.Add(this.B008);
             this.pnl_dsBanLo.Controls.Add(this.label10);
             this.pnl_dsBanLo.Controls.Add(this.label9);
-            this.pnl_dsBanLo.Controls.Add(this._07);
+            this.pnl_dsBanLo.Controls.Add(this.B007);
             this.pnl_dsBanLo.Controls.Add(this.label8);
-            this.pnl_dsBanLo.Controls.Add(this._06);
+            this.pnl_dsBanLo.Controls.Add(this.B006);
             this.pnl_dsBanLo.Controls.Add(this.label7);
-            this.pnl_dsBanLo.Controls.Add(this._05);
+            this.pnl_dsBanLo.Controls.Add(this.B005);
             this.pnl_dsBanLo.Controls.Add(this.label6);
-            this.pnl_dsBanLo.Controls.Add(this._04);
-            this.pnl_dsBanLo.Controls.Add(this._01);
-            this.pnl_dsBanLo.Controls.Add(this._03);
-            this.pnl_dsBanLo.Controls.Add(this._02);
+            this.pnl_dsBanLo.Controls.Add(this.B004);
+            this.pnl_dsBanLo.Controls.Add(this.B001);
+            this.pnl_dsBanLo.Controls.Add(this.B003);
+            this.pnl_dsBanLo.Controls.Add(this.B002);
             this.pnl_dsBanLo.Location = new System.Drawing.Point(36, 174);
             this.pnl_dsBanLo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_dsBanLo.Name = "pnl_dsBanLo";
@@ -526,15 +526,15 @@
             // pnl_dsBanCarom
             // 
             this.pnl_dsBanCarom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnl_dsBanCarom.Controls.Add(this._20);
+            this.pnl_dsBanCarom.Controls.Add(this.C005);
             this.pnl_dsBanCarom.Controls.Add(this.label25);
-            this.pnl_dsBanCarom.Controls.Add(this._21);
+            this.pnl_dsBanCarom.Controls.Add(this.C006);
             this.pnl_dsBanCarom.Controls.Add(this.label24);
-            this.pnl_dsBanCarom.Controls.Add(this._18);
-            this.pnl_dsBanCarom.Controls.Add(this._19);
-            this.pnl_dsBanCarom.Controls.Add(this._17);
+            this.pnl_dsBanCarom.Controls.Add(this.C003);
+            this.pnl_dsBanCarom.Controls.Add(this.C004);
+            this.pnl_dsBanCarom.Controls.Add(this.C002);
             this.pnl_dsBanCarom.Controls.Add(this.label23);
-            this.pnl_dsBanCarom.Controls.Add(this._16);
+            this.pnl_dsBanCarom.Controls.Add(this.C001);
             this.pnl_dsBanCarom.Controls.Add(this.label18);
             this.pnl_dsBanCarom.Controls.Add(this.label19);
             this.pnl_dsBanCarom.Controls.Add(this.label20);
@@ -543,6 +543,20 @@
             this.pnl_dsBanCarom.Name = "pnl_dsBanCarom";
             this.pnl_dsBanCarom.Size = new System.Drawing.Size(444, 362);
             this.pnl_dsBanCarom.TabIndex = 107;
+            // 
+            // C005
+            // 
+            this.C005.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.C005.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.C005.Image = ((System.Drawing.Image)(resources.GetObject("C005.Image")));
+            this.C005.Location = new System.Drawing.Point(196, 182);
+            this.C005.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.C005.Name = "C005";
+            this.C005.Size = new System.Drawing.Size(67, 95);
+            this.C005.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.C005.TabIndex = 104;
+            this.C005.TabStop = false;
+            this.C005.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label25
             // 
@@ -554,6 +568,20 @@
             this.label25.TabIndex = 92;
             this.label25.Text = "Bàn 16";
             // 
+            // C006
+            // 
+            this.C006.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.C006.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.C006.Image = ((System.Drawing.Image)(resources.GetObject("C006.Image")));
+            this.C006.Location = new System.Drawing.Point(317, 177);
+            this.C006.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.C006.Name = "C006";
+            this.C006.Size = new System.Drawing.Size(67, 95);
+            this.C006.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.C006.TabIndex = 103;
+            this.C006.TabStop = false;
+            this.C006.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // label24
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -564,6 +592,48 @@
             this.label24.TabIndex = 93;
             this.label24.Text = "Bàn 17";
             // 
+            // C003
+            // 
+            this.C003.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.C003.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.C003.Image = ((System.Drawing.Image)(resources.GetObject("C003.Image")));
+            this.C003.Location = new System.Drawing.Point(317, 21);
+            this.C003.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.C003.Name = "C003";
+            this.C003.Size = new System.Drawing.Size(67, 95);
+            this.C003.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.C003.TabIndex = 100;
+            this.C003.TabStop = false;
+            this.C003.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // C004
+            // 
+            this.C004.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.C004.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.C004.Image = ((System.Drawing.Image)(resources.GetObject("C004.Image")));
+            this.C004.Location = new System.Drawing.Point(59, 177);
+            this.C004.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.C004.Name = "C004";
+            this.C004.Size = new System.Drawing.Size(67, 95);
+            this.C004.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.C004.TabIndex = 101;
+            this.C004.TabStop = false;
+            this.C004.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // C002
+            // 
+            this.C002.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.C002.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.C002.Image = ((System.Drawing.Image)(resources.GetObject("C002.Image")));
+            this.C002.Location = new System.Drawing.Point(196, 21);
+            this.C002.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.C002.Name = "C002";
+            this.C002.Size = new System.Drawing.Size(67, 95);
+            this.C002.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.C002.TabIndex = 99;
+            this.C002.TabStop = false;
+            this.C002.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // label23
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -573,6 +643,20 @@
             this.label23.Size = new System.Drawing.Size(48, 16);
             this.label23.TabIndex = 94;
             this.label23.Text = "Bàn 18";
+            // 
+            // C001
+            // 
+            this.C001.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.C001.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.C001.Image = ((System.Drawing.Image)(resources.GetObject("C001.Image")));
+            this.C001.Location = new System.Drawing.Point(59, 21);
+            this.C001.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.C001.Name = "C001";
+            this.C001.Size = new System.Drawing.Size(67, 95);
+            this.C001.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.C001.TabIndex = 98;
+            this.C001.TabStop = false;
+            this.C001.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label18
             // 
@@ -604,89 +688,6 @@
             this.label20.TabIndex = 95;
             this.label20.Text = "Bàn 19";
             // 
-            // _19
-            // 
-            this._19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._19.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._19.Image = ((System.Drawing.Image)(resources.GetObject("_19.Image")));
-            this._19.Location = new System.Drawing.Point(59, 177);
-            this._19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._19.Name = "_19";
-            this._19.Size = new System.Drawing.Size(67, 95);
-            this._19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._19.TabIndex = 101;
-            this._19.TabStop = false;
-            this._19.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // _21
-            // 
-            this._21.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._21.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._21.Image = ((System.Drawing.Image)(resources.GetObject("_21.Image")));
-            this._21.Location = new System.Drawing.Point(317, 177);
-            this._21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._21.Name = "_21";
-            this._21.Size = new System.Drawing.Size(67, 95);
-            this._21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._21.TabIndex = 103;
-            this._21.TabStop = false;
-            this._21.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // _18
-            // 
-            this._18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._18.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._18.Image = ((System.Drawing.Image)(resources.GetObject("_18.Image")));
-            this._18.Location = new System.Drawing.Point(317, 21);
-            this._18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._18.Name = "_18";
-            this._18.Size = new System.Drawing.Size(67, 95);
-            this._18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._18.TabIndex = 100;
-            this._18.TabStop = false;
-            this._18.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // _17
-            // 
-            this._17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._17.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._17.Image = ((System.Drawing.Image)(resources.GetObject("_17.Image")));
-            this._17.Location = new System.Drawing.Point(196, 21);
-            this._17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._17.Name = "_17";
-            this._17.Size = new System.Drawing.Size(67, 95);
-            this._17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._17.TabIndex = 99;
-            this._17.TabStop = false;
-            this._17.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // _16
-            // 
-            this._16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._16.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._16.Image = ((System.Drawing.Image)(resources.GetObject("_16.Image")));
-            this._16.Location = new System.Drawing.Point(59, 21);
-            this._16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._16.Name = "_16";
-            this._16.Size = new System.Drawing.Size(67, 95);
-            this._16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._16.TabIndex = 98;
-            this._16.TabStop = false;
-            this._16.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // _20
-            // 
-            this._20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._20.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this._20.Image = ((System.Drawing.Image)(resources.GetObject("_20.Image")));
-            this._20.Location = new System.Drawing.Point(196, 182);
-            this._20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._20.Name = "_20";
-            this._20.Size = new System.Drawing.Size(67, 95);
-            this._20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._20.TabIndex = 104;
-            this._20.TabStop = false;
-            // 
             // frmDSBanBida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -703,31 +704,31 @@
             this.Text = "Phần mềm quản lý bida";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDSBanBida_Load);
-            ((System.ComponentModel.ISupportInitialize)(this._15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._09)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._08)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._07)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._06)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._05)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._04)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._03)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._02)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B015)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B014)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B013)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B012)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B011)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B010)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B009)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B008)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B007)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B006)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B005)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B004)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B003)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B002)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B001)).EndInit();
             this.pnl_dsBanLo.ResumeLayout(false);
             this.pnl_dsBanLo.PerformLayout();
             this.pnl_dsBanCarom.ResumeLayout(false);
             this.pnl_dsBanCarom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C005)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C006)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C003)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C004)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C002)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C001)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,16 +738,16 @@
 
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.PictureBox _15;
-        public System.Windows.Forms.PictureBox _14;
-        public System.Windows.Forms.PictureBox _13;
-        public System.Windows.Forms.PictureBox _12;
-        public System.Windows.Forms.PictureBox _11;
-        public System.Windows.Forms.PictureBox _10;
-        public System.Windows.Forms.PictureBox _09;
-        public System.Windows.Forms.PictureBox _08;
-        public System.Windows.Forms.PictureBox _07;
-        public System.Windows.Forms.PictureBox _06;
+        public System.Windows.Forms.PictureBox B015;
+        public System.Windows.Forms.PictureBox B014;
+        public System.Windows.Forms.PictureBox B013;
+        public System.Windows.Forms.PictureBox B012;
+        public System.Windows.Forms.PictureBox B011;
+        public System.Windows.Forms.PictureBox B010;
+        public System.Windows.Forms.PictureBox B009;
+        public System.Windows.Forms.PictureBox B008;
+        public System.Windows.Forms.PictureBox B007;
+        public System.Windows.Forms.PictureBox B006;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -762,11 +763,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.PictureBox _05;
-        public System.Windows.Forms.PictureBox _04;
-        public System.Windows.Forms.PictureBox _03;
-        public System.Windows.Forms.PictureBox _02;
-        public System.Windows.Forms.PictureBox _01;
+        public System.Windows.Forms.PictureBox B005;
+        public System.Windows.Forms.PictureBox B004;
+        public System.Windows.Forms.PictureBox B003;
+        public System.Windows.Forms.PictureBox B002;
+        public System.Windows.Forms.PictureBox B001;
         public System.Windows.Forms.Panel pnl_dsBanLo;
         public System.Windows.Forms.Panel pnl_dsBanCarom;
         private System.Windows.Forms.Label label25;
@@ -775,12 +776,12 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        public System.Windows.Forms.PictureBox _19;
-        public System.Windows.Forms.PictureBox _21;
-        public System.Windows.Forms.PictureBox _18;
-        public System.Windows.Forms.PictureBox _17;
-        public System.Windows.Forms.PictureBox _16;
-        public System.Windows.Forms.PictureBox _20;
+        public System.Windows.Forms.PictureBox C004;
+        public System.Windows.Forms.PictureBox C006;
+        public System.Windows.Forms.PictureBox C003;
+        public System.Windows.Forms.PictureBox C002;
+        public System.Windows.Forms.PictureBox C001;
+        public System.Windows.Forms.PictureBox C005;
     }
 }
 
