@@ -96,7 +96,12 @@ namespace QL_Bida
             Logout(this, new EventArgs());
         }
 
-        private void button6_Click(object sender, EventArgs e)
+		private void btnThongKe_Click(object sender, EventArgs e)
+		{
+            OpenChildForm(new frm_ThongKe());
+		}
+
+		private void button6_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_QLNV());
         }
