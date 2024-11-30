@@ -277,12 +277,12 @@ namespace QL_Bida
             if (cmb_dsKH.Enabled == true)
             {
                 maKH = cmb_dsKH.SelectedValue.ToString();
-                queryHD = "insert into HOADON values('" + maHD + "', '" + maKH + "', '" + ngayTaoHD + "', " + double.Parse(tienGiamGia) + ", GETDATE(), '" + frmMain.maNV + "')";
+                queryHD = "insert into HOADON values('" + maHD + "', '" + maKH + "', '" + ngayTaoHD + "', " + double.Parse(tienGiamGia) + ", GETDATE(), '" + frmMain.tendn + "')";
             }
             else
             {
                 maKH = "NULL";
-                queryHD = "insert into HOADON values('" + maHD + "', " + maKH + ", '" + ngayTaoHD + "', " + double.Parse(tienGiamGia) + ", GETDATE(), '" + frmMain.maNV + "')";
+                queryHD = "insert into HOADON values('" + maHD + "', " + maKH + ", '" + ngayTaoHD + "', " + double.Parse(tienGiamGia) + ", GETDATE(), '" + frmMain.tendn + "')";
             }
 
             //Thêm 1 dòng vào bảng HOADON
@@ -325,7 +325,7 @@ namespace QL_Bida
                 }
 
                 frmDSBanBida.dsTrangThaiBan.Remove(selectedBan);//Xóa các trạng thái đã lưu
-                DoiMauNenThanhXanh?.Invoke(this, new EventArgs());
+                DoiMauNenThanhXanh.Invoke(this, new EventArgs());
 
             }
             else

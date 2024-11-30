@@ -23,8 +23,8 @@ namespace QL_Bida
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string thang = cbThang.SelectedItem?.ToString();
-			string nam = cbNam.SelectedItem?.ToString();
+			string thang = cbThang.SelectedItem.ToString();
+			string nam = cbNam.SelectedItem.ToString();
 			// Kiểm tra nếu chưa chọn tháng hoặc năm
 			if (string.IsNullOrEmpty(thang) && string.IsNullOrEmpty(nam))
 			{

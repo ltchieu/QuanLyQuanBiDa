@@ -10,7 +10,7 @@ namespace QL_Bida
 {
     public class DBConnect
     {
-        public string connString = "Data Source=DESKTOP-AFT55EF;Initial Catalog=QLBIDA;Integrated Security=True";
+        public string connString = @"Data Source=DESKTOP-66E7O53\SQLEXPRESS;Initial Catalog=QLBIDA;Integrated Security=True";
         public SqlConnection conn = new SqlConnection();
         public DBConnect()
         {
@@ -84,7 +84,77 @@ namespace QL_Bida
             }
 
             int nextNumber = maxNumber + 1;
-            return $"NV{nextNumber:D3}";  // HD000n
+            return "NV" + nextNumber.ToString("D3");  // HD000n
+        }
+
+        public string TaoMAPN() {
+
+            string maPN = string.Empty;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                SqlCommand cmd = new SqlCommand("TaoMAPN", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm tham số OUTPUT
+                SqlParameter outputParam = new SqlParameter("@MaPN", SqlDbType.NVarChar, 5)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                cmd.Parameters.Add(outputParam);
+
+                try
+                {
+                    // Mở kết nối và thực thi stored procedure
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    // Lấy giá trị trả về từ tham số OUTPUT
+                    maPN = outputParam.Value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi nếu có
+                    Console.WriteLine("Lỗi khi gọi stored procedure: " + ex.Message);
+                }
+            }
+
+            return maPN;
+        }
+        public string TaoMAPX()
+        {
+
+            string maPN = string.Empty;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                SqlCommand cmd = new SqlCommand("TaoMAPX", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm tham số OUTPUT
+                SqlParameter outputParam = new SqlParameter("@MaPN", SqlDbType.NVarChar, 5)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                cmd.Parameters.Add(outputParam);
+
+                try
+                {
+                    // Mở kết nối và thực thi stored procedure
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    // Lấy giá trị trả về từ tham số OUTPUT
+                    maPN = outputParam.Value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi nếu có
+                    Console.WriteLine("Lỗi khi gọi stored procedure: " + ex.Message);
+                }
+            }
+
+            return maPN;
         }
     }
 }
