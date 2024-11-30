@@ -10,7 +10,7 @@ namespace QL_Bida
 {
     public class DBConnect
     {
-        public string connString = @"Data Source=DESKTOP-66E7O53\SQLEXPRESS;Initial Catalog=QLBIDA;Integrated Security=True";
+        public string connString = @"Data Source=A203PC14;Initial Catalog=QLBIDA;Integrated Security=True";
         public SqlConnection conn = new SqlConnection();
         public DBConnect()
         {
@@ -87,7 +87,7 @@ namespace QL_Bida
             return "NV" + nextNumber.ToString("D3");  // HD000n
         }
 
-        public string TaoMAPN() {
+        public string TaoMAPN(bool nl) {
 
             string maPN = string.Empty;
 
@@ -102,7 +102,11 @@ namespace QL_Bida
                     Direction = ParameterDirection.Output
                 };
                 cmd.Parameters.Add(outputParam);
-
+                SqlParameter isvlParam = new SqlParameter("@isnl", SqlDbType.NChar, 10)
+                {
+                    Value = nl ? "True" : "False"
+                };
+                cmd.Parameters.Add(isvlParam);
                 try
                 {
                     // Mở kết nối và thực thi stored procedure
@@ -121,10 +125,10 @@ namespace QL_Bida
 
             return maPN;
         }
-        public string TaoMAPX()
+        public string TaoMAPX(bool nl)
         {
 
-            string maPN = string.Empty;
+            string maPX = string.Empty;
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -137,7 +141,11 @@ namespace QL_Bida
                     Direction = ParameterDirection.Output
                 };
                 cmd.Parameters.Add(outputParam);
-
+                SqlParameter isvlParam = new SqlParameter("@isnl", SqlDbType.NChar, 10)
+                {
+                    Value = nl ? "True" : "False"
+                };
+                cmd.Parameters.Add(isvlParam);
                 try
                 {
                     // Mở kết nối và thực thi stored procedure
@@ -145,7 +153,7 @@ namespace QL_Bida
                     cmd.ExecuteNonQuery();
 
                     // Lấy giá trị trả về từ tham số OUTPUT
-                    maPN = outputParam.Value.ToString();
+                    maPX = outputParam.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -154,7 +162,7 @@ namespace QL_Bida
                 }
             }
 
-            return maPN;
+            return maPX;
         }
     }
 }

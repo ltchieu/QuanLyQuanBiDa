@@ -20,8 +20,17 @@ namespace QL_Bida
 
         private void btn_Taomapn_Click(object sender, EventArgs e)
         {
-            string mapn = db.TaoMAPN();
-            txt_mapn.Text = mapn;
+            string mapn = String.Empty;
+            if (radioButton1.Checked)
+            {
+             mapn = db.TaoMAPN(true);
+            }
+            else
+            {
+                 mapn = db.TaoMAPN(false);
+            }
+                txt_mapn.Text = mapn;
+
         }
 
         public void Loadncc()

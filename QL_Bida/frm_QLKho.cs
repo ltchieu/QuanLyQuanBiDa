@@ -135,8 +135,16 @@ namespace QL_Bida
         #region tabnhapkho
         private void btn_Taomapn_Click(object sender, EventArgs e)
         {
-            string mapn = db.TaoMAPN();
-            txt_mapn.Text = mapn;
+            //string mapn = String.Empty;
+            //if (radioButton1.Checked)
+            //{
+            //    mapn = db.TaoMAPN(true);
+            //}
+            //else
+            //{
+            //    mapn = db.TaoMAPN(false);
+            //}
+            //txt_mapn.Text = mapn;
         }
         private void dgv_nl_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -158,7 +166,7 @@ namespace QL_Bida
        
         public void LoadnhNL()
         {
-            dgv_nhaphang.DataSource = db.getDataTable("select n.MAPN, NHACC.TENNHACC , n.NGAYNHAP, NGUYENLIEU.TENNL , c.SOLUONG,c.GIA, n.THANHTIEN from PHIEUNHAP_NL n,CHI_TIET_PHIEU_NHAP_NL c,NHACC ,NHANVIEN,NGUYENLIEU where n.MANCC = NHACC.MANCC and n.MANV = NHANVIEN.MANV and c.MANL = NGUYENLIEU.MANL");
+            dgv_nhaphang.DataSource = db.getDataTable("select n.MAPN, NHACC.TENNHACC , n.NGAYNHAP, NGUYENLIEU.TENNL , c.SOLUONG,c.GIA, n.THANHTIEN from PHIEUNHAP_NL n,CHI_TIET_PHIEU_NHAP_NL c,NHACC ,NHANVIEN,NGUYENLIEU where n.MANCC = NHACC.MANCC and n.MANV = NHANVIEN.MANV and c.MANL = NGUYENLIEU.MANL and n.MAPN = c.MAPN");
         }
         private void btn_nhnl_Click(object sender, EventArgs e)
         {
@@ -167,7 +175,7 @@ namespace QL_Bida
 
         public void LoadnhVL()
         {
-            dgv_nhaphang.DataSource = db.getDataTable("select n.MAPN, NHACC.TENNHACC , n.NGAYNHAP, VATLIEU.TENNL , c.SOLUONG,c.GIA, n.THANHTIEN from PHIEUNHAP_VATLIEU n,CHI_TIET_PHIEU_NHAP_VATLIEU c,NHACC ,NHANVIEN,VATLIEU where n.MANCC = NHACC.MANCC and n.MANV = NHANVIEN.MANV and c.MAVL = VATLIEU.MAVL");
+            dgv_nhaphang.DataSource = db.getDataTable("select n.MAPN, NHACC.TENNHACC , n.NGAYNHAP, VATLIEU.TENVL , c.SOLUONG,c.GIA, n.THANHTIEN from PHIEUNHAP_VATLIEU n,CHI_TIET_PHIEU_NHAP_VATLIEU c,NHACC ,NHANVIEN,VATLIEU where n.MANCC = NHACC.MANCC and n.MANV = NHANVIEN.MANV and c.MAVL = VATLIEU.MAVL and n.MAPN = c.MAPN");
         }
         private void btn_nhvl_Click(object sender, EventArgs e)
         {
@@ -175,8 +183,8 @@ namespace QL_Bida
         }
         private void btn_Taomapx_Click(object sender, EventArgs e)
         {
-            string mapx = db.TaoMAPX();
-            txt_mapx.Text = mapx;
+            //string mapx = db.TaoMAPX();
+            //txt_mapx.Text = mapx;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -197,6 +205,7 @@ namespace QL_Bida
                     cb_nl_vl_pn.DataSource = null;
                     cb_nl_vl_pn.Text = "Nhà cung cấp không cung cấp nguyên liệu này";
                 }
+                txt_mapn.Text = db.TaoMAPN(true);
             }
             else if (radioButton2.Checked)
             {
@@ -214,6 +223,7 @@ namespace QL_Bida
                     cb_nl_vl_pn.DataSource = null;
                     cb_nl_vl_pn.Text = "Nhà cung cấp không cung cấp vật liệu này";
                 }
+                txt_mapn.Text = db.TaoMAPN(false);
             }
         }
         #endregion
@@ -245,7 +255,7 @@ namespace QL_Bida
                 dt.Columns.Add("Giá");
                 dt.Columns.Add("Thành tiền");
 
-                dt.Rows.Add(txt_mapn.Text, ngaynhap, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
             }
             else
             {
@@ -254,7 +264,7 @@ namespace QL_Bida
                 dt.Columns.Add("Giá");
                 dt.Columns.Add("Thành tiền");
 
-                dt.Rows.Add(txt_mapn.Text, ngaynhap, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
             }
             dgv_dsnhaphang.DataSource = dt;
             }
@@ -262,15 +272,20 @@ namespace QL_Bida
 
         private void btn_Luunhaphang_Click(object sender, EventArgs e)
         {
-           
+            if (String.IsNullOrEmpty(txt_mapn.Text) || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.ToString()))
+            {
+                MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
+            }
+            else
+            {
                 if (radioButton1.Checked)
                 {
-                   
-                    
-                        string sql = "insert into PHIEUNHAP_NL values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "', null)";
-                        int res = db.getNonquery(sql);
-                DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
-                foreach (DataRow row in dt.Rows)
+
+
+                    string sql = "insert into PHIEUNHAP_NL values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + txt_ttn.Text + "')";
+                    int res = db.getNonquery(sql);
+                    DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
+                    foreach (DataRow row in dt.Rows)
                     {
                         string mapn = row["Mã pn"].ToString();
                         string ngaynhap = row["Ngày nhập"].ToString();
@@ -297,14 +312,14 @@ namespace QL_Bida
                         }
 
                     }
-                        
-                    }
+
+                }
                 else
                 {
-                    
-                        string sql = "insert into PHIEUNHAP_VATLIEU values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "',null)";
-                        int res = db.getNonquery(sql);
-                DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
+
+                    string sql = "insert into PHIEUNHAP_VATLIEU values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "','" + txt_ttn.Text + "')";
+                    int res = db.getNonquery(sql);
+                    DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
                     foreach (DataRow row in dt.Rows)
                     {
                         string mapn = row["Mã pn"].ToString();
@@ -315,7 +330,7 @@ namespace QL_Bida
                         string tt = row["Thành tiền"].ToString();
                         if (res != 0)
                         {
-                            string sql1 = "insert into  CHI_TIET_PHIEU_NHAP_VATLIEU values('" + mapn+ "', '" + cb_nl_vl_pn.SelectedValue + "' , " + txt_sln + " , " + txt_Gian + ")";
+                            string sql1 = "insert into  CHI_TIET_PHIEU_NHAP_VATLIEU values('" + mapn + "', '" + cb_nl_vl_pn.SelectedValue + "' , " + sl + " , " + gia + ")";
                             int res1 = db.getNonquery(sql1);
                             if (res1 != 0)
                             {
@@ -331,7 +346,9 @@ namespace QL_Bida
                             }
                         }
                     }
+                }
             }
+           
         }
 
         private void txt_Gian_Leave(object sender, EventArgs e)
@@ -344,6 +361,146 @@ namespace QL_Bida
             {
                 MessageBox.Show("Phai nhap so luong");
             }
+        }
+     
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton4.Checked)
+            {
+                string sql = "select NGUYENLIEU.* from NCC_VatLieuNguyenLieu n, NGUYENLIEU where n.MANL = NGUYENLIEU.MANL";
+                cb_nh_vl_px.DataSource = db.getDataTable(sql);
+                cb_nh_vl_px.ValueMember = "MANL";
+                cb_nh_vl_px.DisplayMember = "TENNL";
+                txt_mapx.Text = db.TaoMAPX(true);
+            }
+            else
+            {
+                string sql = "select VATLIEU.* from NCC_VatLieuNguyenLieu n, VATLIEU where n.MAVL = VATLIEU.MAVL";
+                cb_nh_vl_px.DataSource = db.getDataTable(sql);
+                cb_nh_vl_px.ValueMember = "MAVL";
+                cb_nh_vl_px.DisplayMember = "TENVL";
+                txt_mapx.Text = db.TaoMAPX(false);
+            }
+        }
+
+        private void btn_Thempx_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_mapx.Text) || String.IsNullOrEmpty(txt_slx.Text.ToString()))
+            {
+                MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Mã px");
+                dt.Columns.Add("Ngày xuất");
+                if (radioButton4.Checked)
+                {
+                    dt.Columns.Add("Tên nguyên liệu");
+                    dt.Columns.Add("Số lượng");
+
+                    dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                }
+                else
+                {
+                    dt.Columns.Add("Tên vật liệu");
+                    dt.Columns.Add("Số lượng");
+
+                    dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                }
+                dgv_dsxuathang.DataSource = dt;
+            }
+        }
+
+        private void btn_luuxuathang_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_mapx.Text) || String.IsNullOrEmpty(txt_slx.Text.ToString()))
+            {
+                MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
+            }
+            else
+            {
+                if (radioButton4.Checked)
+                {
+
+
+                    string sql = "insert into PHIEUXUAT_NL values('" + txt_mapx.Text + "' , 'NV012','" + ngayxuat.Value.ToString("yyyy-MM-dd hh:mm:ss") + "')";
+                    int res = db.getNonquery(sql);
+                    DataTable dt = dgv_dsxuathang.DataSource as DataTable;
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string mapx = row["Mã px"].ToString();
+                        string ngaynhap = row["Ngày xuất"].ToString();
+                        string tennl = row["Tên nguyên liệu"].ToString();
+                        string sl = row["Số lượng"].ToString();
+                        if (res != 0)
+                        {
+                            string sql1 = "insert into  CHI_TIET_PHIEU_XUAT_NL values('" + mapx + "', '" + cb_nh_vl_px.SelectedValue + "' , " + sl + ")";
+                            int res1 = db.getNonquery(sql1);
+                            if (res1 != 0)
+                            {
+                                MessageBox.Show("Thêm phiếu xuất thành công");
+                                LoadnhNL();
+                                txt_slx.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm phiếu xuất không thành công");
+                            }
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    string sql = "insert into PHIEUXUAT_VATLIEU values('" + txt_mapx.Text + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss")  + ")";
+                    int res = db.getNonquery(sql);
+                    DataTable dt = dgv_dsxuathang.DataSource as DataTable;
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string mapx = row["Mã px"].ToString();
+                        string ngaynhap = row["Ngày xuất"].ToString();
+                        string tenvl = row["Tên vật liệu"].ToString();
+                        string sl = row["Số lượng"].ToString();
+                        if (res != 0)
+                        {
+                            string sql1 = "insert into  CHI_TIET_PHIEU_XUAT_VATLIEU values('" + mapx + "', '" + cb_nh_vl_px.SelectedValue + "' , " + sl +")";
+                            int res1 = db.getNonquery(sql1);
+                            if (res1 != 0)
+                            {
+                                MessageBox.Show("Thêm phiếu xuất thành công");
+                                LoadnhVL();
+                                txt_slx.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm phiếu xuất không thành công");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public void LoadxhNL()
+        {
+            dgv_xuathang.DataSource = db.getDataTable("select n.MAPX, n.NGAYXUAT, NGUYENLIEU.TENNL , c.SOLUONG from PHIEUXUAT_NL n, CHI_TIET_PHIEU_XUAT_NL c, NHANVIEN, NGUYENLIEU where n.MANV = NHANVIEN.MANV and c.MANL = NGUYENLIEU.MANL and n.MAPX = c.MAPX  ");
+        }
+
+        // Hàm load dữ liệu phiếu xuất vật liệu
+        public void LoadxhVL()
+        {
+            dgv_xuathang.DataSource = db.getDataTable("select n.MAPX, n.NGAYXUAT, VATLIEU.TENVL , c.SOLUONG from PHIEUXUAT_VATLIEU n, CHI_TIET_PHIEU_XUAT_VATLIEU c, NHANVIEN, VATLIEU where n.MANV = NHANVIEN.MANV and c.MAVL = VATLIEU.MAVL and n.MAPX = c.MAPX");
+        }
+        private void btn_xuahangnl_Click(object sender, EventArgs e)
+        {
+            LoadxhNL();
+        }
+
+        private void btn_xuathangvl_Click(object sender, EventArgs e)
+        {
+            LoadxhVL();
         }
     }
 }

@@ -53,8 +53,8 @@ namespace QL_Bida
         // Tạo mã phiếu xuất
         private void btn_Taomapx_Click(object sender, EventArgs e)
         {
-            string mapx = db.TaoMAPX();
-            txt_mapx.Text = mapx;
+            //string mapx = db.TaoMAPX();
+            //txt_mapx.Text = mapx;
         }
 
         // Sự kiện khi chọn nhà cung cấp và nguyên liệu/vật liệu
