@@ -83,18 +83,6 @@
     <Compile Include="frm_BanBida.Designer.cs">
       <DependentUpon>frm_BanBida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_NguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_NguyenLieu.Designer.cs">
-      <DependentUpon>Frm_NguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_NhapKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_NhapKho.Designer.cs">
-      <DependentUpon>frm_NhapKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_QLKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,18 +100,6 @@
     </Compile>
     <Compile Include="frm_ThongKe.Designer.cs">
       <DependentUpon>frm_ThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_VatLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_VatLieu.Designer.cs">
-      <DependentUpon>Frm_VatLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_XuatKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_XuatKho.Designer.cs">
-      <DependentUpon>frm_XuatKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,20 +119,8 @@
     <EmbeddedResource Include="frm_BanBida.resx">
       <DependentUpon>frm_BanBida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_NguyenLieu.resx">
-      <DependentUpon>Frm_NguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_NhapKho.resx">
-      <DependentUpon>frm_NhapKho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_QLKho.resx">
       <DependentUpon>frm_QLKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_VatLieu.resx">
-      <DependentUpon>Frm_VatLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_XuatKho.resx">
-      <DependentUpon>frm_XuatKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -33,7 +33,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_nl = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_slnl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
@@ -65,8 +65,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cb_tenvl = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.btn_locvl = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -203,12 +201,13 @@
             this.dgv_nl.RowTemplate.Height = 24;
             this.dgv_nl.Size = new System.Drawing.Size(1067, 302);
             this.dgv_nl.TabIndex = 0;
+            this.dgv_nl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nl_CellClick);
             this.dgv_nl.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_nl_CellMouseClick_1);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txt_slnl);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btn_xoa);
             this.groupBox2.Controls.Add(this.btn_Sua);
@@ -230,13 +229,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thêm nguyên liệu";
             // 
-            // textBox3
+            // txt_slnl
             // 
-            this.textBox3.Location = new System.Drawing.Point(259, 175);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 34);
-            this.textBox3.TabIndex = 10;
+            this.txt_slnl.Location = new System.Drawing.Point(259, 175);
+            this.txt_slnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_slnl.Name = "txt_slnl";
+            this.txt_slnl.Size = new System.Drawing.Size(227, 34);
+            this.txt_slnl.TabIndex = 10;
             // 
             // label6
             // 
@@ -272,6 +271,7 @@
             this.btn_Sua.TabIndex = 7;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // rc_mota
             // 
@@ -490,6 +490,7 @@
             this.btn_suavl.TabIndex = 7;
             this.btn_suavl.Text = "Sửa";
             this.btn_suavl.UseVisualStyleBackColor = false;
+            this.btn_suavl.Click += new System.EventHandler(this.btn_suavl_Click);
             // 
             // rc_vl
             // 
@@ -563,8 +564,6 @@
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.Highlight;
             this.groupBox5.Controls.Add(this.cb_tenvl);
-            this.groupBox5.Controls.Add(this.textBox4);
-            this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.btn_locvl);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -581,35 +580,17 @@
             // cb_tenvl
             // 
             this.cb_tenvl.FormattingEnabled = true;
-            this.cb_tenvl.Location = new System.Drawing.Point(252, 78);
+            this.cb_tenvl.Location = new System.Drawing.Point(260, 116);
             this.cb_tenvl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cb_tenvl.Name = "cb_tenvl";
             this.cb_tenvl.Size = new System.Drawing.Size(227, 37);
             this.cb_tenvl.TabIndex = 5;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(252, 155);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 34);
-            this.textBox4.TabIndex = 4;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(87, 153);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 29);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "label11";
-            // 
             // btn_locvl
             // 
             this.btn_locvl.BackColor = System.Drawing.Color.Salmon;
             this.btn_locvl.ForeColor = System.Drawing.Color.White;
-            this.btn_locvl.Location = new System.Drawing.Point(211, 242);
+            this.btn_locvl.Location = new System.Drawing.Point(180, 242);
             this.btn_locvl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_locvl.Name = "btn_locvl";
             this.btn_locvl.Size = new System.Drawing.Size(128, 43);
@@ -622,7 +603,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(61, 82);
+            this.label12.Location = new System.Drawing.Point(69, 120);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(137, 29);
             this.label12.TabIndex = 0;
@@ -651,6 +632,7 @@
             this.dgv_vl.RowTemplate.Height = 24;
             this.dgv_vl.Size = new System.Drawing.Size(1067, 270);
             this.dgv_vl.TabIndex = 0;
+            this.dgv_vl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vl_CellClick);
             // 
             // tabPage3
             // 
@@ -1322,7 +1304,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgv_nl;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_slnl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_Sua;
@@ -1354,8 +1336,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cb_tenvl;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btn_locvl;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox6;
