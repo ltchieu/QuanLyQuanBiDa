@@ -10,7 +10,7 @@ namespace QL_Bida
 {
     public class DBConnect
     {
-        public string connString = @"Data Source=A203PC14;Initial Catalog=QLBIDA;Integrated Security=True";
+        public string connString = @"Data Source=DESKTOP-66E7O53\SQLEXPRESS;Initial Catalog=QLBIDA;Integrated Security=True";
         public SqlConnection conn = new SqlConnection();
         public DBConnect()
         {
