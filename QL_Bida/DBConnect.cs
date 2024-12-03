@@ -87,7 +87,7 @@ namespace QL_Bida
             int nextNumber = maxNumber + 1;
             return $"NV{nextNumber:D3}";  // HD000n
         }
-
+       
         public int ExcuteProc(string sql, object[] parameter = null)
         {
             int k = -1;

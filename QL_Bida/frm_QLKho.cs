@@ -23,13 +23,45 @@ namespace QL_Bida
         }
 
         #region NguyenLieu
+        private void btn_taomanl_Click(object sender, EventArgs e)
+        {
+            string manl = "NL";
+            string query = "select MANL from NGUYENLIEU where MANL like '" + manl + "%' order by MANL desc";
+            DataTable dt = db.getDataTable(query);
+            if (dt.Rows.Count == 0)
+            {
+                manl += "001";
+            }
+            else
+            {
+                int stt = int.Parse(dt.Rows[0][0].ToString().Substring(3));
+                stt++;
+                if (stt.ToString().Length == 1)
+                {
+                    manl += "00" + stt.ToString();
+                }
+                else if (stt.ToString().Length == 2)
+                    manl += "0" + stt.ToString();
+                else
+                    manl += stt.ToString();
+            }
+
+            txt__manl.Text = manl;
+            btn_taomanl.Enabled = false;
+        }
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            int kq = db.getNonquery("delete from NGUYENLIEU where MANL = '" + txt__manl.Text + "'");
+            int kq = db.getNonquery("delete from DichVu_NguyenLieu where MANL = '" + txt__manl.Text + "'");
             if (kq != 0)
             {
+                int kq1 = db.getNonquery("delete from NGUYENLIEU where MANL = '" + txt__manl.Text + "'");
+                if (kq1 != 0)
+                {
                 MessageBox.Show("Xóa thành công");
                 LoadNL();
+                btn_xoa.Enabled = false;
+
+                }
             }
             else
             {
@@ -44,6 +76,10 @@ namespace QL_Bida
             {
                 MessageBox.Show("Thêm nguyên liệu thành công");
                 LoadNL();
+                txt__manl.Clear();
+                txt_tennl.Clear();
+                rc_mota.Clear();
+
             }
             else
             {
@@ -51,6 +87,7 @@ namespace QL_Bida
                     MessageBox.Show("Thêm nguyên liệu không thành công");
                 
             }
+            btn_taomanl.Enabled = true;
         }
 
         private void btn_loc_Click(object sender, EventArgs e)
@@ -70,7 +107,7 @@ namespace QL_Bida
         }
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            int kq =  db.getNonquery("update NGUYENLIEU set MANL = '" + txt__manl.Text + "', '" + txt_tennl.Text + "' ,'" + rc_mota.Text + "'," + txt_slnl + "");
+            int kq =  db.getNonquery("update NGUYENLIEU set TENNL = N'" + txt_tennl.Text + "' , MOTA = N'" + rc_mota.Text + "', SOLUONGTON =" + txt_slnl.Text + " where MANL = '"+txt__manl.Text+"'");
             if (kq != 0)
             {
                 MessageBox.Show("Sửa thành công");
@@ -85,12 +122,17 @@ namespace QL_Bida
         private void dgv_nl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexnl = e.RowIndex;
+
+            if (indexnl >= 0 && indexnl < dgv_nl.Rows.Count - 1)
+            {
             DataTable dt = dgv_nl.DataSource as DataTable;
-            txt__manl.Text = dt.Rows[0]["MANL"].ToString();
-            txt_tennl.Text = dt.Rows[0]["TENNL"].ToString();
-            rc_mota.Text = dt.Rows[0]["MOTA"].ToString();
-            txt_slnl.Text = dt.Rows[0]["SOLUONGTON"].ToString();
+            txt__manl.Text = dt.Rows[indexnl]["MANL"].ToString();
+            txt_tennl.Text = dt.Rows[indexnl]["TENNL"].ToString();
+            rc_mota.Text = dt.Rows[indexnl]["MOTA"].ToString();
+            txt_slnl.Text = dt.Rows[indexnl]["SOLUONGTON"].ToString();
             btn_Sua.Enabled = true;
+            btn_xoa.Enabled = true;
+            }
         }
         #endregion
       
@@ -109,13 +151,45 @@ namespace QL_Bida
             ngaynhap.Value = DateTime.Now;
             btn_xoapn.Enabled = false;
             btn_xoapx.Enabled = false;
+            btn_xoa.Enabled = false;
+            btn_xoavl.Enabled = false;
             btn_Sua.Enabled = false;
             btn_suavl.Enabled = false;
+            btn_taomanl.Enabled = true;
+            btn_taomavl.Enabled = true;
+            txt_slnl.Text = "0";
+            txt_slvl.Text = "0";
         }
 
 
 
         #region VatLieu
+        private void btn_taomavl_Click(object sender, EventArgs e)
+        {
+            string mavl = "VL";
+            string query = "select MAVL from VATLIEU where MAVL like '" + mavl + "%' order by MAVL desc";
+            DataTable dt = db.getDataTable(query);
+            if (dt.Rows.Count == 0)
+            {
+                mavl += "001";
+            }
+            else
+            {
+                int stt = int.Parse(dt.Rows[0][0].ToString().Substring(3));
+                stt++;
+                if (stt.ToString().Length == 1)
+                {
+                    mavl += "00" + stt.ToString();
+                }
+                else if (stt.ToString().Length == 2)
+                    mavl += "0" + stt.ToString();
+                else
+                    mavl += stt.ToString();
+            }
+
+            txt__manl.Text = mavl;
+            btn_taomavl.Enabled = false;
+        }
         public void LoadVL()
         {
             // Tải dữ liệu vật liệu từ cơ sở dữ liệu vào DataGridView
@@ -127,7 +201,7 @@ namespace QL_Bida
         }
         private void btn_locvl_Click(object sender, EventArgs e)
         {
-            DataTable dt = db.getDataTable("select * from VATLIEU where MAVL = '" + txt__mavl.Text + "'");
+            DataTable dt = db.getDataTable("select * from VATLIEU where MAVL = '" + cb_tenvl.SelectedValue.ToString() + "'");
             dgv_vl.DataSource = dt;
         }
 
@@ -140,6 +214,9 @@ namespace QL_Bida
             {
                 MessageBox.Show("Thêm vật liệu thành công");
                 LoadVL(); // Tải lại danh sách vật liệu
+                txt__mavl.Clear();
+                txt_tenvl.Clear();
+                rc_vl.Clear();
             }
             else
             {
@@ -158,6 +235,7 @@ namespace QL_Bida
             {
                 MessageBox.Show("Xóa vật liệu thành công");
                 LoadVL(); // Tải lại danh sách vật liệu
+                btn_xoavl.Enabled = false;
             }
             else
             {
@@ -167,16 +245,20 @@ namespace QL_Bida
         private void dgv_vl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexvl = e.RowIndex;
-            DataTable dt = dgv_nl.DataSource as DataTable;
-            txt__manl.Text = dt.Rows[0]["MAVL"].ToString();
-            txt_tennl.Text = dt.Rows[0]["TENVL"].ToString();
-            rc_mota.Text = dt.Rows[0]["MOTA"].ToString();
-            txt_slnl.Text = dt.Rows[0]["SOLUONGTON"].ToString();
-            btn_suavl.Enabled = true;
+            if (indexvl >= 0 && indexvl < dgv_vl.Rows.Count - 1)
+            {
+                DataTable dt = dgv_vl.DataSource as DataTable;
+                txt__mavl.Text = dt.Rows[indexvl]["MAVL"].ToString();
+                txt_tenvl.Text = dt.Rows[indexvl]["TENVL"].ToString();
+                rc_vl.Text = dt.Rows[indexvl]["MOTA"].ToString();
+                txt_slvl.Text = dt.Rows[indexvl]["SOLUONGTON"].ToString();
+                btn_suavl.Enabled = true;
+                btn_xoavl.Enabled = true;
+            }
         }
         private void btn_suavl_Click(object sender, EventArgs e)
         {
-            int kq = db.getNonquery("update VATLIEU set MAVL = '" + txt__mavl.Text + "', '" + txt_tenvl.Text + "' ,'" + rc_vl.Text + "'," + txt_slvl.Text + "");
+            int kq = db.getNonquery("update VATLIEU set TENVL = N'" + txt_tenvl.Text + "' , MOTA = N'" + rc_vl.Text + "', SOLUONGTON =" + txt_slvl.Text + " where MAVL ='"+txt__mavl.Text+"'");
             if (kq != 0)
             {
                 MessageBox.Show("Sửa thành công");
@@ -224,7 +306,7 @@ namespace QL_Bida
                 if (radioButton1.Checked)
                 {
 
-                    if (cb_nl_vl_pn.SelectedValue != "")
+                    if (cb_nl_vl_pn.SelectedValue == "")
                     {
                         MessageBox.Show("Tên nguyên liệu không tồn tại");
                     }
@@ -235,15 +317,13 @@ namespace QL_Bida
                         dt.Columns.Add("Giá");
                         dt.Columns.Add("Thành tiền");
                         dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
-                        txt_Gian.Clear();
-                        txt_sln.Clear();
-                        txt_ttn.Clear();
+                       
                     }
                 }
                 else
                 {
 
-                    if (cb_nl_vl_pn.SelectedValue != "")
+                    if (cb_nl_vl_pn.SelectedValue == "")
                     {
                         MessageBox.Show("Tên vật liệu không tồn tại");
                     }
@@ -254,9 +334,6 @@ namespace QL_Bida
                         dt.Columns.Add("Giá");
                         dt.Columns.Add("Thành tiền");
                         dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
-                        txt_Gian.Clear();
-                        txt_sln.Clear();
-                        txt_ttn.Clear();
                     }
                 }
                 dgv_dsnhaphang.DataSource = dt;
@@ -265,7 +342,7 @@ namespace QL_Bida
 
         private void btn_Luunhaphang_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_mapn.Text) || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.ToString()))
+            if (dgv_dsnhaphang.DataSource == null)
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
             }
@@ -293,6 +370,7 @@ namespace QL_Bida
                             {
                                 MessageBox.Show("Thêm phiếu nhập thành công");
                                 LoadnhNL();
+                                dgv_dsnhaphang.DataSource = null;
                                 txt_mapn.Clear();
                                 txt_sln.Clear();
                                 txt_Gian.Clear();
@@ -331,6 +409,7 @@ namespace QL_Bida
                             {
                                 MessageBox.Show("Thêm phiếu nhập thành công");
                                 LoadnhVL();
+                                dgv_dsnhaphang.DataSource = null;
                                 txt_mapn.Clear();
                                 txt_sln.Clear();
                                 txt_Gian.Clear();
@@ -408,9 +487,11 @@ namespace QL_Bida
         }
         private void dgv_dsnhaphang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexrownh = e.RowIndex;
-            btn_xoapn.Enabled = false;
-
+                indexrownh = e.RowIndex;
+                if (indexrownh >= 0 && indexrownh < dgv_dsnhaphang.Rows.Count - 1)
+            {
+                btn_xoapn.Enabled = true;
+            }
         }
         #endregion
 
@@ -482,7 +563,6 @@ namespace QL_Bida
                         dt.Columns.Add("Số lượng");
 
                         dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
-                        txt_slx.Clear();
                     }
                     else
                     {
@@ -497,7 +577,6 @@ namespace QL_Bida
                         dt.Columns.Add("Số lượng");
 
                         dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
-                        txt_slx.Clear();
                     }
                     else
                     {
@@ -510,7 +589,10 @@ namespace QL_Bida
         private void dgv_dsxuathang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexrowxh = e.RowIndex;
-            btn_xoapx.Enabled = true;
+            if (indexrowxh >= 0 && indexrowxh < dgv_dsxuathang.Rows.Count - 1)
+            {
+                btn_xoapx.Enabled = true;
+            }
         }
 
         private void btn_xoapx_Click(object sender, EventArgs e)
@@ -522,12 +604,17 @@ namespace QL_Bida
                 {
                     dt.Rows.RemoveAt(indexrowxh);
                 }
+                if (dt.Rows.Count == 0)
+                {
+                    dgv_dsxuathang.DataSource = null;
+                    txt_slx.Clear();
+                }
             }
             btn_xoapx.Enabled = false;
         }
         private void btn_luuxuathang_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_mapx.Text) || String.IsNullOrEmpty(txt_slx.Text.ToString()))
+            if (dgv_dsxuathang.DataSource == null)
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
             }
@@ -552,8 +639,10 @@ namespace QL_Bida
                             if (res1 != 0)
                             {
                                 MessageBox.Show("Thêm phiếu xuất thành công");
-                                LoadnhNL();
+                                LoadxhNL();
+                                dgv_dsxuathang.DataSource = null;
                                 txt_slx.Clear();
+                                
                             }
                             else
                             {
@@ -567,7 +656,7 @@ namespace QL_Bida
                 else
                 {
 
-                    string sql = "insert into PHIEUXUAT_VATLIEU values('" + txt_mapx.Text + "' , 'NV012','" + ngayxuat.Value.ToString("yyyy-MM-dd hh:mm:ss") + ")";
+                    string sql = "insert into PHIEUXUAT_VATLIEU values('" + txt_mapx.Text + "' , 'NV012','" + ngayxuat.Value.ToString("yyyy-MM-dd hh:mm:ss") + "')";
                     int res = db.getNonquery(sql);
                     DataTable dt = dgv_dsxuathang.DataSource as DataTable;
                     foreach (DataRow row in dt.Rows)
@@ -582,7 +671,8 @@ namespace QL_Bida
                             if (res1 != 0)
                             {
                                 MessageBox.Show("Thêm phiếu xuất thành công");
-                                LoadnhVL();
+                                LoadxhVL();
+                                dgv_dsxuathang.DataSource = null;
                                 txt_slx.Clear();
                             }
                             else
@@ -623,6 +713,17 @@ namespace QL_Bida
                 {
                     dt.Rows.RemoveAt(indexrownh);
                 }
+
+                if (dt.Rows.Count == 0)
+                {
+                    dgv_dsnhaphang.DataSource = null;
+                    txt_mapn.Clear();
+                    txt_sln.Clear();
+                    txt_Gian.Clear();
+                    txt_ttn.Clear();
+                    radioButton1.Checked = false;
+                    radioButton2.Checked = false;
+                }
             }
             btn_xoapn.Enabled = false;
         }
@@ -654,6 +755,10 @@ namespace QL_Bida
         {
 
         }
+
+      
+
+        
 
        
 
