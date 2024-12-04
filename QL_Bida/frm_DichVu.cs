@@ -127,5 +127,12 @@ namespace QL_Bida
 				MessageBox.Show("Không có dịch vụ này.");
 			}
 		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			frm_LoaiDV f = new frm_LoaiDV();
+			f.ShowDialog();
+			
+		}
 	}
 }

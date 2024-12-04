@@ -49,7 +49,17 @@ namespace QL_Bida
             (sender as frmMain).Close();
             this.Show();
         }
-    }
+
+		private void btnThoat_Click(object sender, EventArgs e)
+		{
+            Application.Exit();
+		}
+
+		private void frmDangNhap_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 
 
 }

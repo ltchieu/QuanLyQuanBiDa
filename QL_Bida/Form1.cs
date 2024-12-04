@@ -30,7 +30,7 @@ namespace QL_Bida
 
             frm_BanBida.selectedBan = ptrBox.Name.Substring(1);
 
-            frm_Ban.lb_NgayVaoChoi.Text = DateTime.Now.ToShortDateString();
+            frm_Ban.lb_NgayVaoChoi.Text = DateTime.Now.ToString("yyyy-MM-dd");
             frm_Ban.txt_StartTime.Text = DateTime.Now.ToString("T");
             if (ptrBox.Name.Substring(0, 1) == "B")
             {

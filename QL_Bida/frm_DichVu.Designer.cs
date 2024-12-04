@@ -32,6 +32,7 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button2 = new System.Windows.Forms.Button();
 			this.txtMADV = new System.Windows.Forms.TextBox();
 			this.btnSua = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
 			this.cbLoaiDV = new System.Windows.Forms.ComboBox();
 			this.txtGiaDV = new System.Windows.Forms.TextBox();
 			this.txtTenDV = new System.Windows.Forms.TextBox();
-			this.btnXoa = new System.Windows.Forms.Button();
 			this.btnThem = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.dgvDichVu = new System.Windows.Forms.DataGridView();
@@ -89,6 +89,7 @@
 			// 
 			this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			this.groupBox1.Controls.Add(this.button2);
 			this.groupBox1.Controls.Add(this.txtMADV);
 			this.groupBox1.Controls.Add(this.btnSua);
 			this.groupBox1.Controls.Add(this.label3);
@@ -97,7 +98,6 @@
 			this.groupBox1.Controls.Add(this.cbLoaiDV);
 			this.groupBox1.Controls.Add(this.txtGiaDV);
 			this.groupBox1.Controls.Add(this.txtTenDV);
-			this.groupBox1.Controls.Add(this.btnXoa);
 			this.groupBox1.Controls.Add(this.btnThem);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(902, 108);
@@ -106,6 +106,16 @@
 			this.groupBox1.TabIndex = 11;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Thông tin dịch vụ";
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(37, 303);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(216, 36);
+			this.button2.TabIndex = 14;
+			this.button2.Text = "Quản lý loại dịch vụ";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// txtMADV
 			// 
@@ -118,9 +128,9 @@
 			// 
 			this.btnSua.BackColor = System.Drawing.Color.MediumTurquoise;
 			this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSua.Location = new System.Drawing.Point(272, 233);
+			this.btnSua.Location = new System.Drawing.Point(215, 233);
 			this.btnSua.Name = "btnSua";
-			this.btnSua.Size = new System.Drawing.Size(98, 47);
+			this.btnSua.Size = new System.Drawing.Size(137, 47);
 			this.btnSua.TabIndex = 18;
 			this.btnSua.Text = "Sửa";
 			this.btnSua.UseVisualStyleBackColor = false;
@@ -178,25 +188,13 @@
 			this.txtTenDV.Size = new System.Drawing.Size(121, 28);
 			this.txtTenDV.TabIndex = 12;
 			// 
-			// btnXoa
-			// 
-			this.btnXoa.BackColor = System.Drawing.Color.MediumTurquoise;
-			this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnXoa.Location = new System.Drawing.Point(155, 233);
-			this.btnXoa.Name = "btnXoa";
-			this.btnXoa.Size = new System.Drawing.Size(98, 47);
-			this.btnXoa.TabIndex = 11;
-			this.btnXoa.Text = "Xóa";
-			this.btnXoa.UseVisualStyleBackColor = false;
-			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-			// 
 			// btnThem
 			// 
 			this.btnThem.BackColor = System.Drawing.Color.MediumTurquoise;
 			this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnThem.Location = new System.Drawing.Point(37, 233);
+			this.btnThem.Location = new System.Drawing.Point(41, 233);
 			this.btnThem.Name = "btnThem";
-			this.btnThem.Size = new System.Drawing.Size(98, 47);
+			this.btnThem.Size = new System.Drawing.Size(130, 47);
 			this.btnThem.TabIndex = 10;
 			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = false;
@@ -257,11 +255,11 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox cbLoaiDV;
+		public System.Windows.Forms.ComboBox cbLoaiDV;
 		private System.Windows.Forms.TextBox txtGiaDV;
 		private System.Windows.Forms.TextBox txtTenDV;
-		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Button btnThem;
 		private System.Windows.Forms.TextBox txtMADV;
+		private System.Windows.Forms.Button button2;
 	}
 }

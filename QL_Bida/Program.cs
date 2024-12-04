@@ -16,7 +16,7 @@ namespace QL_Bida
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_QLKho());
+            Application.Run(new frmDangNhap());
         }
     }
 }

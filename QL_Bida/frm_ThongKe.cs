@@ -23,14 +23,15 @@ namespace QL_Bida
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string thang = cbThang?.SelectedItem.ToString();
-			string nam = cbNam?.SelectedItem.ToString();
+			
 			// Kiểm tra nếu chưa chọn tháng hoặc năm
-			if (string.IsNullOrEmpty(thang) && string.IsNullOrEmpty(nam))
+			if (cbThang.SelectedItem==null || cbNam.SelectedItem == null)
 			{
 				MessageBox.Show("Vui lòng chọn tháng và năm trước khi lọc!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return; // Ngừng xử lý nếu không có giá trị
 			}
+			string thang = cbThang.SelectedItem.ToString();
+			string nam = cbNam.SelectedItem.ToString();
 			DataTable dt = LayDuLieuThongKe(thang, nam);
 			VeBieuDoDoanhThu(dt);
 		}
@@ -132,17 +133,20 @@ ORDER BY
 		{
 			// Thêm danh sách tháng
 			cbThang.Items.Add(""); // Không chọn tháng
+			//cbThang.SelectedIndex = 0;
 			for (int i = 1; i <= 12; i++)
 			{
 				cbThang.Items.Add(i.ToString("D2"));
 			}
 
 			// Thêm danh sách năm
-			cbNam.Items.Add(""); // Không chọn năm
+			cbNam.Items.Add(" "); // Không chọn năm
+			//cbNam.SelectedIndex = 0;
 			for (int i = 2000; i <= DateTime.Now.Year; i++)
 			{
 				cbNam.Items.Add(i.ToString());
 			}
+			
 
 			for (int i = 1; i <= 12; i++)
 			{
@@ -170,7 +174,7 @@ ORDER BY
 			}
 
 			chart1.Titles.Clear();
-            //chart1.Titles.Add($"Tỷ lệ chọn loại bàn tháng {month}");
+			chart1.Titles.Add($"Tỷ lệ chọn loại bàn tháng {month}");
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

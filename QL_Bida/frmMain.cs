@@ -19,7 +19,7 @@ namespace QL_Bida
         {
             InitializeComponent();
         }
-
+        DBConnect db = new DBConnect();
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
         {
@@ -76,12 +76,35 @@ namespace QL_Bida
                 btnDanhSachBan.Enabled = true;
                 btnHoaDonLS.Enabled = true;
                 btnKhachHang.Enabled = true;
-               
+                btnKho.Enabled= false;
                 btnQLDichVu.Enabled = false;
                 btnNhanVien.Enabled = false;
                 btnThongKe.Enabled = false;
             }
-        }
+			DateTime ngayHT = DateTime.Now; //Lấy ra ngày hiện tại
+			DateTime ngayTT = ngayHT.AddDays(1); //Lấy ra ngày tiếp theo của ngày hiện tại
+
+			string query = "select * from DatBan where NgayDatBan Between '" + ngayHT.ToString("yyyy-MM-dd") + "' and '" + ngayTT.ToString("yyyy-MM-dd") + "'";
+			List<string> dsBanDuocDat = new List<string>();
+			string kq = "Danh sách bàn được đặt vào hôm nay: ";
+			DataTable dt = db.getDataTable(query);
+			if (dt != null || dt.Rows.Count != 0)
+			{
+				foreach (DataRow item in dt.Rows)
+				{
+					dsBanDuocDat.Add(item["MaBan"].ToString());
+				}
+				foreach (var s in dsBanDuocDat)
+				{
+					if (s == dsBanDuocDat.Last())
+						kq += s.Trim();
+					else
+						kq += s.Trim() + ", ";
+				}
+
+				MessageBox.Show(kq);
+			}
+		}
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -99,6 +122,21 @@ namespace QL_Bida
 		private void btnQLDichVu_Click(object sender, EventArgs e)
 		{
             OpenChildForm(new frm_DichVu());
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+            OpenChildForm(new frmDatBan());
+		}
+
+		private void btnKhachHang_Click(object sender, EventArgs e)
+		{
+            OpenChildForm(new frmThemKH());
+		}
+
+		private void btnKho_Click(object sender, EventArgs e)
+		{
+            OpenChildForm(new frm_QLKho());
 		}
 
 		private void btnThongKe_Click(object sender, EventArgs e)

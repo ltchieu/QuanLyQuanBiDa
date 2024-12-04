@@ -71,6 +71,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDatBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatBan.Designer.cs">
+      <DependentUpon>frmDatBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="frm_DichVu.Designer.cs">
       <DependentUpon>frm_DichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_LoaiDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_LoaiDV.Designer.cs">
+      <DependentUpon>frm_LoaiDV.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_QLKho.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,9 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDatBan.resx">
+      <DependentUpon>frmDatBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,8 +143,14 @@
     <EmbeddedResource Include="frm_DichVu.resx">
       <DependentUpon>frm_DichVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_LoaiDV.resx">
+      <DependentUpon>frm_LoaiDV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_QLKho.resx">
       <DependentUpon>frm_QLKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QLNV.resx">
+      <DependentUpon>frm_QLNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ThongKe.resx">
       <DependentUpon>frm_ThongKe.cs</DependentUpon>
