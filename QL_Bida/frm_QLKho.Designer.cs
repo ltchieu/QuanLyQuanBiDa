@@ -33,6 +33,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_nl = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_taomanl = new System.Windows.Forms.Button();
             this.txt_slnl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_xoa = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             this.btn_loc = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_taomavl = new System.Windows.Forms.Button();
             this.txt_slvl = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_xoavl = new System.Windows.Forms.Button();
@@ -121,8 +123,6 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dgv_xuathang = new System.Windows.Forms.DataGridView();
             this.btn_xuahangnl = new System.Windows.Forms.Button();
-            this.btn_taomanl = new System.Windows.Forms.Button();
-            this.btn_taomavl = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -230,6 +230,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thêm nguyên liệu";
             // 
+            // btn_taomanl
+            // 
+            this.btn_taomanl.BackColor = System.Drawing.Color.Brown;
+            this.btn_taomanl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_taomanl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_taomanl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_taomanl.Location = new System.Drawing.Point(442, 34);
+            this.btn_taomanl.Name = "btn_taomanl";
+            this.btn_taomanl.Size = new System.Drawing.Size(86, 39);
+            this.btn_taomanl.TabIndex = 11;
+            this.btn_taomanl.Text = "Tạo mã";
+            this.btn_taomanl.UseVisualStyleBackColor = false;
+            this.btn_taomanl.Click += new System.EventHandler(this.btn_taomanl_Click);
+            // 
             // txt_slnl
             // 
             this.txt_slnl.Location = new System.Drawing.Point(209, 175);
@@ -252,20 +266,21 @@
             // 
             this.btn_xoa.BackColor = System.Drawing.Color.Salmon;
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_xoa.Location = new System.Drawing.Point(349, 242);
+            this.btn_xoa.Location = new System.Drawing.Point(400, 242);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(128, 43);
             this.btn_xoa.TabIndex = 8;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Visible = false;
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_Sua
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.Salmon;
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua.Location = new System.Drawing.Point(205, 242);
+            this.btn_Sua.Location = new System.Drawing.Point(266, 242);
             this.btn_Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(128, 43);
@@ -323,7 +338,7 @@
             // 
             this.btn_them.BackColor = System.Drawing.Color.Salmon;
             this.btn_them.ForeColor = System.Drawing.Color.White;
-            this.btn_them.Location = new System.Drawing.Point(72, 242);
+            this.btn_them.Location = new System.Drawing.Point(104, 242);
             this.btn_them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(128, 43);
@@ -430,6 +445,20 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thêm vật liệu";
             // 
+            // btn_taomavl
+            // 
+            this.btn_taomavl.BackColor = System.Drawing.Color.Brown;
+            this.btn_taomavl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_taomavl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_taomavl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_taomavl.Location = new System.Drawing.Point(443, 32);
+            this.btn_taomavl.Name = "btn_taomavl";
+            this.btn_taomavl.Size = new System.Drawing.Size(86, 39);
+            this.btn_taomavl.TabIndex = 12;
+            this.btn_taomavl.Text = "Tạo mã";
+            this.btn_taomavl.UseVisualStyleBackColor = false;
+            this.btn_taomavl.Click += new System.EventHandler(this.btn_taomavl_Click);
+            // 
             // txt_slvl
             // 
             this.txt_slvl.Location = new System.Drawing.Point(205, 175);
@@ -452,20 +481,21 @@
             // 
             this.btn_xoavl.BackColor = System.Drawing.Color.Salmon;
             this.btn_xoavl.ForeColor = System.Drawing.Color.White;
-            this.btn_xoavl.Location = new System.Drawing.Point(338, 242);
+            this.btn_xoavl.Location = new System.Drawing.Point(400, 242);
             this.btn_xoavl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xoavl.Name = "btn_xoavl";
             this.btn_xoavl.Size = new System.Drawing.Size(128, 43);
             this.btn_xoavl.TabIndex = 8;
             this.btn_xoavl.Text = "Xóa";
             this.btn_xoavl.UseVisualStyleBackColor = false;
+            this.btn_xoavl.Visible = false;
             this.btn_xoavl.Click += new System.EventHandler(this.btn_xoavl_Click);
             // 
             // btn_suavl
             // 
             this.btn_suavl.BackColor = System.Drawing.Color.Salmon;
             this.btn_suavl.ForeColor = System.Drawing.Color.White;
-            this.btn_suavl.Location = new System.Drawing.Point(194, 242);
+            this.btn_suavl.Location = new System.Drawing.Point(253, 242);
             this.btn_suavl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_suavl.Name = "btn_suavl";
             this.btn_suavl.Size = new System.Drawing.Size(128, 43);
@@ -523,7 +553,7 @@
             // 
             this.btn_themvl.BackColor = System.Drawing.Color.Salmon;
             this.btn_themvl.ForeColor = System.Drawing.Color.White;
-            this.btn_themvl.Location = new System.Drawing.Point(61, 242);
+            this.btn_themvl.Location = new System.Drawing.Point(79, 242);
             this.btn_themvl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_themvl.Name = "btn_themvl";
             this.btn_themvl.Size = new System.Drawing.Size(128, 43);
@@ -873,6 +903,7 @@
             this.btn_Taomapn.TabIndex = 9;
             this.btn_Taomapn.Text = "Tạo mã phiếu nhập";
             this.btn_Taomapn.UseVisualStyleBackColor = true;
+            this.btn_Taomapn.Visible = false;
             this.btn_Taomapn.Click += new System.EventHandler(this.btn_Taomapn_Click);
             // 
             // label19
@@ -1236,34 +1267,6 @@
             this.btn_xuahangnl.Text = "Hiển thi xuất hàng nguyên liệu";
             this.btn_xuahangnl.UseVisualStyleBackColor = true;
             this.btn_xuahangnl.Click += new System.EventHandler(this.btn_xuahangnl_Click);
-            // 
-            // btn_taomanl
-            // 
-            this.btn_taomanl.BackColor = System.Drawing.Color.Brown;
-            this.btn_taomanl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_taomanl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_taomanl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_taomanl.Location = new System.Drawing.Point(442, 34);
-            this.btn_taomanl.Name = "btn_taomanl";
-            this.btn_taomanl.Size = new System.Drawing.Size(86, 39);
-            this.btn_taomanl.TabIndex = 11;
-            this.btn_taomanl.Text = "Tạo mã";
-            this.btn_taomanl.UseVisualStyleBackColor = false;
-            this.btn_taomanl.Click += new System.EventHandler(this.btn_taomanl_Click);
-            // 
-            // btn_taomavl
-            // 
-            this.btn_taomavl.BackColor = System.Drawing.Color.Brown;
-            this.btn_taomavl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_taomavl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_taomavl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_taomavl.Location = new System.Drawing.Point(443, 32);
-            this.btn_taomavl.Name = "btn_taomavl";
-            this.btn_taomavl.Size = new System.Drawing.Size(86, 39);
-            this.btn_taomavl.TabIndex = 12;
-            this.btn_taomavl.Text = "Tạo mã";
-            this.btn_taomavl.UseVisualStyleBackColor = false;
-            this.btn_taomavl.Click += new System.EventHandler(this.btn_taomavl_Click);
             // 
             // frm_QLKho
             // 

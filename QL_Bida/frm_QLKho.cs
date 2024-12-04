@@ -187,7 +187,7 @@ namespace QL_Bida
                     mavl += stt.ToString();
             }
 
-            txt__manl.Text = mavl;
+            txt__mavl.Text = mavl;
             btn_taomavl.Enabled = false;
         }
         public void LoadVL()
@@ -209,7 +209,7 @@ namespace QL_Bida
         {
            
             // Thêm một vật liệu mới vào cơ sở dữ liệu
-            int kq = db.getNonquery("insert into VATLIEU values(N'" + txt__mavl.Text + "', N'" + txt_tenvl.Text + "', N'" + rc_mota.Text + "' , 0)");
+            int kq = db.getNonquery("insert into VATLIEU values(N'" + txt__mavl.Text + "', N'" + txt_tenvl.Text + "', N'" + rc_vl.Text + "' , 0)");
             if (kq != 0)
             {
                 MessageBox.Show("Thêm vật liệu thành công");
@@ -294,7 +294,7 @@ namespace QL_Bida
         }
         private void btn_Thempn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_mapn.Text) || String.IsNullOrEmpty(txt_mapn.Text) || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.ToString()))
+            if (String.IsNullOrEmpty(txt_mapn.Text)  || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.Text.ToString()) || String.IsNullOrEmpty(txt_ttn.Text))
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
             }
@@ -344,7 +344,7 @@ namespace QL_Bida
         {
             if (dgv_dsnhaphang.DataSource == null)
             {
-                MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
+                MessageBox.Show("Bạn cần thêm phiếu nhập");
             }
             else
             {
@@ -430,13 +430,17 @@ namespace QL_Bida
 
         private void txt_Gian_Leave(object sender, EventArgs e)
         {
-            if (txt_sln.Text != "")
+            if (txt_sln.Text != "" && txt_Gian.Text != "")
             {
                 txt_ttn.Text = (double.Parse(txt_sln.Text) * double.Parse(txt_Gian.Text)).ToString();
             }
-            else
+            else if(txt_sln.Text == "")
             {
                 MessageBox.Show("Phải nhập số lượng");
+            }
+            else
+            {
+                MessageBox.Show("Phải nhập giá");
             }
         }
 
@@ -616,7 +620,7 @@ namespace QL_Bida
         {
             if (dgv_dsxuathang.DataSource == null)
             {
-                MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
+                MessageBox.Show("Bạn cần thêm phiếu xuất");
             }
             else
             {
