@@ -77,6 +77,12 @@
     <Compile Include="frmDatBan.Designer.cs">
       <DependentUpon>frmDatBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLichSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLichSu.Designer.cs">
+      <DependentUpon>frmLichSu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="frm_BanBida.Designer.cs">
       <DependentUpon>frm_BanBida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CTHD.Designer.cs">
+      <DependentUpon>frm_CTHD.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_DichVu.cs">
       <SubType>Form</SubType>
@@ -134,11 +146,17 @@
     <EmbeddedResource Include="frmDatBan.resx">
       <DependentUpon>frmDatBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLichSu.resx">
+      <DependentUpon>frmLichSu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_BanBida.resx">
       <DependentUpon>frm_BanBida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CTHD.resx">
+      <DependentUpon>frm_CTHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DichVu.resx">
       <DependentUpon>frm_DichVu.cs</DependentUpon>

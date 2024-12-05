@@ -139,7 +139,12 @@ namespace QL_Bida
             OpenChildForm(new frm_QLKho());
 		}
 
-		private void btnThongKe_Click(object sender, EventArgs e)
+        private void btnHoaDonLS_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmLichSu());
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
 		{
             OpenChildForm(new frm_ThongKe());
 		}
