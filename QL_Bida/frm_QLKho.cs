@@ -292,51 +292,74 @@ namespace QL_Bida
             txt_tennl.Text = dt.Rows[e.RowIndex]["TENNL"].ToString();
             rc_mota.Text = dt.Rows[e.RowIndex]["mota"].ToString();
         }
-        private void btn_Thempn_Click(object sender, EventArgs e)
+       private void btn_Thempn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_mapn.Text)  || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.Text.ToString()) || String.IsNullOrEmpty(txt_ttn.Text))
+            if (String.IsNullOrEmpty(txt_mapn.Text) || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.Text.ToString()) || String.IsNullOrEmpty(txt_ttn.Text))
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin");
             }
             else
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Mã pn");
-                dt.Columns.Add("Ngày nhập");
+
                 if (radioButton1.Checked)
                 {
-
-                    if (cb_nl_vl_pn.SelectedValue == "")
+                    DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
+                    if (cb_nl_vl_pn.SelectedValue == null)
                     {
                         MessageBox.Show("Tên nguyên liệu không tồn tại");
                     }
                     else
                     {
-                        dt.Columns.Add("Tên nguyên liệu");
-                        dt.Columns.Add("Số lượng");
-                        dt.Columns.Add("Giá");
-                        dt.Columns.Add("Thành tiền");
-                        dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                        if (dt != null)
+                        {
+                            dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                            dgv_dsnhaphang.DataSource = dt;
+                        }
+                        else
+                        {
+                            dt = new DataTable();
+                            dt.Columns.Add("Mã pn");
+                            dt.Columns.Add("Ngày nhập");
+                            dt.Columns.Add("Tên nguyên liệu");
+                            dt.Columns.Add("Số lượng");
+                            dt.Columns.Add("Giá");
+                            dt.Columns.Add("Thành tiền");
+                            dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                            dgv_dsnhaphang.DataSource = dt;
+                        }
                        
                     }
                 }
                 else
                 {
-
-                    if (cb_nl_vl_pn.SelectedValue == "")
+                    DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
+                    if (cb_nl_vl_pn.SelectedValue == null)
                     {
                         MessageBox.Show("Tên vật liệu không tồn tại");
                     }
                     else
                     {
-                        dt.Columns.Add("Tên vật liệu");
-                        dt.Columns.Add("Số lượng");
-                        dt.Columns.Add("Giá");
-                        dt.Columns.Add("Thành tiền");
-                        dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+
+                        if (dt != null)
+                        {
+                            dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                            dgv_dsnhaphang.DataSource = dt;
+                        }
+                        else
+                        {
+                            dt = new DataTable();
+                            dt.Columns.Add("Mã pn");
+                            dt.Columns.Add("Ngày nhập");
+                            dt.Columns.Add("Tên vật liệu");
+                            dt.Columns.Add("Số lượng");
+                            dt.Columns.Add("Giá");
+                            dt.Columns.Add("Thành tiền");
+                            dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
+                            dgv_dsnhaphang.DataSource = dt;
+                        }
                     }
                 }
-                dgv_dsnhaphang.DataSource = dt;
+
             }
         }
 
@@ -464,6 +487,8 @@ namespace QL_Bida
                 lb_themtxt.Text = "Thêm vật liệu";
                 txt_mapx.Text = db.TaoMAPX(false);
             }
+             radioButton4.Enabled = false;
+            radioButton3.Enabled = false;
         }
         public void Loadncc()
         {
@@ -507,7 +532,7 @@ namespace QL_Bida
             //txt_mapx.Text = mapx;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+       private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
             {
@@ -527,6 +552,8 @@ namespace QL_Bida
                     cb_nl_vl_pn.Text = "Nhà cung cấp không cung cấp nguyên liệu";
                 }
                 txt_mapn.Text = db.TaoMAPN(true);
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
             }
             else if (radioButton2.Checked)
             {
@@ -546,9 +573,12 @@ namespace QL_Bida
                     cb_nl_vl_pn.Text = "Nhà cung cấp không cung cấp vật liệu";
                 }
                 txt_mapn.Text = db.TaoMAPN(false);
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
             }
+           
         }
-        private void btn_Thempx_Click(object sender, EventArgs e)
+       private void btn_Thempx_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_mapx.Text) || String.IsNullOrEmpty(txt_slx.Text.ToString()))
             {
@@ -556,17 +586,30 @@ namespace QL_Bida
             }
             else
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Mã px");
-                dt.Columns.Add("Ngày xuất");
+
                 if (radioButton4.Checked)
                 {
-                    if (cb_nh_vl_px.SelectedValue != "")
+                    DataTable dt = dgv_dsxuathang.DataSource as DataTable;
+                    if (cb_nh_vl_px.SelectedValue != null)
                     {
-                        dt.Columns.Add("Tên nguyên liệu");
-                        dt.Columns.Add("Số lượng");
 
-                        dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                        if (dt != null)
+                        {
+                            dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                            dgv_dsxuathang.DataSource = dt;
+                        }
+                        else
+                        {
+                            dt = new DataTable();
+                            dt.Columns.Add("Mã px");
+                            dt.Columns.Add("Ngày xuất");
+                            dt.Columns.Add("Tên nguyên liệu");
+                            dt.Columns.Add("Số lượng");
+                            dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                            dgv_dsxuathang.DataSource = dt;
+                        }
+                       
+                       
                     }
                     else
                     {
@@ -575,19 +618,32 @@ namespace QL_Bida
                 }
                 else
                 {
-                    if (cb_nh_vl_px.SelectedValue != "")
+                    DataTable dt = dgv_dsxuathang.DataSource as DataTable;
+                    if (cb_nh_vl_px.SelectedValue != null)
                     {
-                        dt.Columns.Add("Tên vật liệu");
-                        dt.Columns.Add("Số lượng");
-
-                        dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                        if (dt != null)
+                        {
+                            dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                            dgv_dsxuathang.DataSource = dt;
+                        }
+                        else
+                        {
+                            dt = new DataTable();
+                            dt.Columns.Add("Mã px");
+                            dt.Columns.Add("Ngày xuất");
+                            dt.Columns.Add("Tên vật liệu");
+                            dt.Columns.Add("Số lượng");
+                            dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
+                            dgv_dsxuathang.DataSource = dt;
+                        }
+                       
                     }
                     else
                     {
                         MessageBox.Show("Tên vật liệu không tồn tại");
                     }
                 }
-                dgv_dsxuathang.DataSource = dt;
+
             }
         }
         private void dgv_dsxuathang_CellClick(object sender, DataGridViewCellEventArgs e)
