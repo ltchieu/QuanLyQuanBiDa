@@ -70,25 +70,25 @@ namespace QL_Bida
         }
 
         private void btn_them_Click(object sender, EventArgs e)
-        {
-            int kq = db.getNonquery("insert into NGUYENLIEU values(N'" + txt__manl.Text + "', N'" + txt_tennl.Text + "' , N'" + rc_mota.Text + "' , 0)");
-            if (kq != 0)
             {
-                MessageBox.Show("Thêm nguyên liệu thành công");
-                LoadNL();
-                txt__manl.Clear();
-                txt_tennl.Clear();
-                rc_mota.Clear();
+                int kq = db.getNonquery("insert into NGUYENLIEU values(N'" + txt__manl.Text + "', N'" + txt_tennl.Text + "' , N'" + rc_mota.Text + "' , "+txt_slnl.Text+")");
+                if (kq != 0)
+                {
+                    MessageBox.Show("Thêm nguyên liệu thành công");
+                    LoadNL();
+                    txt__manl.Clear();
+                    txt_tennl.Clear();
+                    rc_mota.Clear();
 
-            }
-            else
-            {
+                }
+                else
+                {
                 
-                    MessageBox.Show("Thêm nguyên liệu không thành công");
+                        MessageBox.Show("Thêm nguyên liệu không thành công");
                 
+                }
+                btn_taomanl.Enabled = true;
             }
-            btn_taomanl.Enabled = true;
-        }
 
         private void btn_loc_Click(object sender, EventArgs e)
         {
@@ -209,7 +209,7 @@ namespace QL_Bida
         {
            
             // Thêm một vật liệu mới vào cơ sở dữ liệu
-            int kq = db.getNonquery("insert into VATLIEU values(N'" + txt__mavl.Text + "', N'" + txt_tenvl.Text + "', N'" + rc_vl.Text + "' , 0)");
+            int kq = db.getNonquery("insert into VATLIEU values(N'" + txt__mavl.Text + "', N'" + txt_tenvl.Text + "', N'" + rc_vl.Text + "' , "+txt_slvl+")");
             if (kq != 0)
             {
                 MessageBox.Show("Thêm vật liệu thành công");
