@@ -48,15 +48,16 @@ namespace QL_Bida
             return dt.Tables[0];
         }
 
-        public int getScalar(string strQuery)
-        {
-            Open();
-            SqlCommand cmd = new SqlCommand(strQuery, conn);
-            int kq = (int)cmd.ExecuteScalar();
-            Close();
+        public object getScalar(string strQuery)
+	 {
+	     Open();
+	     SqlCommand cmd = new SqlCommand(strQuery, conn);
+	     object kq = cmd.ExecuteScalar();
+	     Close();
+	
+	     return kq;
+	 }
 
-            return kq;
-        }
 
         public int updateTable(string query, DataTable dtNew)
         {
