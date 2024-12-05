@@ -571,7 +571,7 @@ namespace QL_Bida
                 lb_nv_vl.Text = "Thêm nguyên liệu";
                 string sql1 = "select count(*) from NCC_VatLieuNguyenLieu n,NHACC,NGUYENLIEU where NHACC.MANCC = '" + cb_nhacc.SelectedValue + "' and n.MANCC = NHACC.MANCC and n.MANL = NGUYENLIEU.MANL";
                 string sql = "select NGUYENLIEU.* from NCC_VatLieuNguyenLieu n,NHACC,NGUYENLIEU where NHACC.MANCC = '" + cb_nhacc.SelectedValue + "' and n.MANCC = NHACC.MANCC and n.MANL = NGUYENLIEU.MANL";
-                int result = db.getScalar(sql1);
+                int result = int.Parse(db.getScalar(sql1).ToString());
                 if (result != 0)
                 {
                     cb_nl_vl_pn.DataSource = db.getDataTable(sql);
@@ -592,7 +592,7 @@ namespace QL_Bida
                 lb_nv_vl.Text = "Thêm vật liệu";
                 string sql1 = "select count(*) from NCC_VatLieuNguyenLieu n,NHACC,VATLIEU where NHACC.MANCC = '" + cb_nhacc.SelectedValue + "' and n.MANCC = NHACC.MANCC and n.MAVL = VATLIEU.MAVL";
                 string sql = "select VATLIEU.* from NCC_VatLieuNguyenLieu n,NHACC,VATLIEU where NHACC.MANCC = '" + cb_nhacc.SelectedValue + "' and n.MANCC = NHACC.MANCC and n.MAVL = VATLIEU.MAVL";
-                int result = db.getScalar(sql1);
+                int result = int.Parse(db.getScalar(sql1).ToString());
                 if (result != 0)
                 {
                     cb_nl_vl_pn.DataSource = db.getDataTable(sql);
