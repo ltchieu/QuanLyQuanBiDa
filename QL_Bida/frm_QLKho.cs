@@ -292,7 +292,7 @@ namespace QL_Bida
             txt_tennl.Text = dt.Rows[e.RowIndex]["TENNL"].ToString();
             rc_mota.Text = dt.Rows[e.RowIndex]["mota"].ToString();
         }
-       private void btn_Thempn_Click(object sender, EventArgs e)
+      private void btn_Thempn_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_mapn.Text) || String.IsNullOrEmpty(txt_sln.Text.ToString()) || String.IsNullOrEmpty(txt_Gian.Text.ToString()) || String.IsNullOrEmpty(txt_ttn.Text))
             {
@@ -327,7 +327,9 @@ namespace QL_Bida
                             dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
                             dgv_dsnhaphang.DataSource = dt;
                         }
-                       
+                        txt_sln.Clear();
+                        txt_Gian.Clear();
+                        txt_ttn.Clear();
                     }
                 }
                 else
@@ -357,14 +359,19 @@ namespace QL_Bida
                             dt.Rows.Add(txt_mapn.Text, ngaynhap.Value, cb_nl_vl_pn.Text, txt_sln.Text, txt_Gian.Text, txt_ttn.Text);
                             dgv_dsnhaphang.DataSource = dt;
                         }
+                        txt_sln.Clear();
+                        txt_Gian.Clear();
+                        txt_ttn.Clear();
                     }
+
                 }
 
             }
         }
 
-        private void btn_Luunhaphang_Click(object sender, EventArgs e)
+       private void btn_Luunhaphang_Click(object sender, EventArgs e)
         {
+            bool nhaptc = false;
             if (dgv_dsnhaphang.DataSource == null)
             {
                 MessageBox.Show("Bạn cần thêm phiếu nhập");
@@ -375,23 +382,25 @@ namespace QL_Bida
                 {
 
 
-                    string sql = "insert into PHIEUNHAP_NL values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + txt_ttn.Text + "')";
+                    string sql = "insert into PHIEUNHAP_NL values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "')";
                     int res = db.getNonquery(sql);
                     DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
                     foreach (DataRow row in dt.Rows)
                     {
                         string mapn = row["Mã pn"].ToString();
                         string tennl = row["Tên nguyên liệu"].ToString();
+                        string manl = db.getScalar("select MANL from NGUYENLIEU where TENNL = N'" + tennl + "'").ToString();
                         string sl = row["Số lượng"].ToString();
                         string gia = row["Giá"].ToString();
                         string tt = row["Thành tiền"].ToString();
                         if (res != 0)
                         {
-                            string sql1 = "insert into  CHI_TIET_PHIEU_NHAP_NL values('" + mapn + "', '" + cb_nl_vl_pn.SelectedValue + "' , " + sl + " , " + gia + ")";
+                            string sql1 = "insert into  CHI_TIET_PHIEU_NHAP_NL values('" + mapn + "', '" + manl + "' , " + sl + " , " + gia + " , " + tt + ")";
                             int res1 = db.getNonquery(sql1);
                             if (res1 != 0)
                             {
-                                MessageBox.Show("Thêm phiếu nhập thành công");
+                                nhaptc = true;
+                               
                                 LoadnhNL();
                                 dgv_dsnhaphang.DataSource = null;
                                 txt_mapn.Clear();
@@ -400,37 +409,48 @@ namespace QL_Bida
                                 txt_ttn.Clear();
                                 radioButton1.Checked = false;
                                 radioButton2.Checked = false;
-
+                                radioButton1.Enabled = true;
+                                radioButton2.Enabled = true;
                             }
                             else
                             {
-                                MessageBox.Show("Thêm phiếu nhập không thành công");
+                                nhaptc = false;
+                                
                             }
                         }
 
                     }
-
+                    if (nhaptc)
+                    {
+                        MessageBox.Show("Thêm phiếu nhập thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm phiếu nhập không thành công");
+                    }
+                    nhaptc = false;
                 }
                 else
                 {
 
-                    string sql = "insert into PHIEUNHAP_VATLIEU values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "','" + txt_ttn.Text + "')";
+                    string sql = "insert into PHIEUNHAP_VATLIEU values('" + txt_mapn.Text + "', '" + cb_nhacc.SelectedValue + "' , 'NV012','" + ngaynhap.Value.ToString("yyyy-MM-dd hh:mm:ss") + "')";
                     int res = db.getNonquery(sql);
                     DataTable dt = dgv_dsnhaphang.DataSource as DataTable;
                     foreach (DataRow row in dt.Rows)
                     {
                         string mapn = row["Mã pn"].ToString();
                         string tenvl = row["Tên vật liệu"].ToString();
+                        string mavl = db.getScalar("select MAVL from VATLIEU where TENVL = N'" + tenvl + "'").ToString();
                         string sl = row["Số lượng"].ToString();
                         string gia = row["Giá"].ToString();
                         string tt = row["Thành tiền"].ToString();
                         if (res != 0)
                         {
-                            string sql1 = "insert into  CHI_TIET_PHIEU_NHAP_VATLIEU values('" + mapn + "', '" + cb_nl_vl_pn.SelectedValue + "' , " + sl + " , " + gia + ")";
+                            string sql1 = "insert into  CHI_TIET_PHIEU_NHAP_VATLIEU values('" + mapn + "', '" + mavl + "' , " + sl + " , " + gia + ","+tt+")";
                             int res1 = db.getNonquery(sql1);
                             if (res1 != 0)
                             {
-                                MessageBox.Show("Thêm phiếu nhập thành công");
+                                nhaptc = true;
                                 LoadnhVL();
                                 dgv_dsnhaphang.DataSource = null;
                                 txt_mapn.Clear();
@@ -439,13 +459,25 @@ namespace QL_Bida
                                 txt_ttn.Clear();
                                 radioButton1.Checked = false;
                                 radioButton2.Checked = false;
+                                radioButton1.Enabled = true;
+                                radioButton2.Enabled = true;
                             }
                             else
                             {
-                                MessageBox.Show("Thêm phiếu nhập không thành công");
+                                nhaptc = false;
                             }
+                           
                         }
                     }
+                    if (nhaptc)
+                    {
+                        MessageBox.Show("Thêm phiếu nhập thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm phiếu nhập không thành công");
+                    }
+                    nhaptc = false;
                 }
             }
 
@@ -578,7 +610,7 @@ namespace QL_Bida
             }
            
         }
-       private void btn_Thempx_Click(object sender, EventArgs e)
+      private void btn_Thempx_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_mapx.Text) || String.IsNullOrEmpty(txt_slx.Text.ToString()))
             {
@@ -608,8 +640,8 @@ namespace QL_Bida
                             dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
                             dgv_dsxuathang.DataSource = dt;
                         }
-                       
-                       
+
+                        txt_slx.Clear();
                     }
                     else
                     {
@@ -636,7 +668,7 @@ namespace QL_Bida
                             dt.Rows.Add(txt_mapx.Text, ngayxuat.Value, cb_nh_vl_px.Text, txt_slx.Text);
                             dgv_dsxuathang.DataSource = dt;
                         }
-                       
+                        txt_slx.Clear();
                     }
                     else
                     {
@@ -674,6 +706,7 @@ namespace QL_Bida
         }
         private void btn_luuxuathang_Click(object sender, EventArgs e)
         {
+            bool xuattc = false;
             if (dgv_dsxuathang.DataSource == null)
             {
                 MessageBox.Show("Bạn cần thêm phiếu xuất");
@@ -691,27 +724,39 @@ namespace QL_Bida
                     {
                         string mapx = row["Mã px"].ToString();
                         string tennl = row["Tên nguyên liệu"].ToString();
+                        string manl = db.getScalar("select MANL from NGUYENLIEU where TENNL = N'" + tennl + "'").ToString();
                         string sl = row["Số lượng"].ToString();
                         if (res != 0)
                         {
-                            string sql1 = "insert into  CHI_TIET_PHIEU_XUAT_NL values('" + mapx + "', '" + cb_nh_vl_px.SelectedValue + "' , " + sl + ")";
+                            string sql1 = "insert into  CHI_TIET_PHIEU_XUAT_NL values('" + mapx + "', '" + manl + "' , " + sl + ")";
                             int res1 = db.getNonquery(sql1);
                             if (res1 != 0)
                             {
-                                MessageBox.Show("Thêm phiếu xuất thành công");
+                                xuattc = true;
+                               
                                 LoadxhNL();
                                 dgv_dsxuathang.DataSource = null;
                                 txt_slx.Clear();
-                                
                             }
                             else
                             {
-                                MessageBox.Show("Thêm phiếu xuất không thành công");
+                                xuattc = false;
+                               
                             }
                         }
 
                     }
-
+                    radioButton4.Enabled = true;
+                    radioButton3.Enabled = true;
+                    if (xuattc)
+                    {
+                        MessageBox.Show("Thêm phiếu xuất thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm phiếu xuất không thành công");
+                    }
+                    xuattc = false;
                 }
                 else
                 {
@@ -723,24 +768,36 @@ namespace QL_Bida
                     {
                         string mapx = row["Mã px"].ToString();
                         string tenvl = row["Tên vật liệu"].ToString();
+                        string mavl = db.getScalar("select MAVL from VATLIEU where TENVL = N'" + tenvl + "'").ToString();
                         string sl = row["Số lượng"].ToString();
                         if (res != 0)
                         {
-                            string sql1 = "insert into  CHI_TIET_PHIEU_XUAT_VATLIEU values('" + mapx + "', '" + cb_nh_vl_px.SelectedValue + "' , " + sl + ")";
+                            string sql1 = "insert into  CHI_TIET_PHIEU_XUAT_VATLIEU values('" + mapx + "', '" + mavl + "' , " + sl + ")";
                             int res1 = db.getNonquery(sql1);
                             if (res1 != 0)
                             {
-                                MessageBox.Show("Thêm phiếu xuất thành công");
+                                xuattc = true;
                                 LoadxhVL();
                                 dgv_dsxuathang.DataSource = null;
                                 txt_slx.Clear();
                             }
                             else
                             {
-                                MessageBox.Show("Thêm phiếu xuất không thành công");
+                                xuattc = false;
                             }
                         }
                     }
+                    radioButton4.Enabled = true;
+                    radioButton3.Enabled = true;
+                    if (xuattc)
+                    {
+                        MessageBox.Show("Thêm phiếu xuất thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm phiếu xuất không thành công");
+                    }
+                    xuattc = false;
                 }
             }
         }
